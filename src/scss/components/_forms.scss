@@ -1,0 +1,48 @@
+// DESKTOP
+@media #{$desktop} {
+  .sign-up-form {
+    @include size(30%, 400px);
+    background: $gray-1;
+    float: right;
+    .join {
+      @include font($roboto, 27px, null);
+      color: $red-2;
+      margin-bottom: 7px;
+    }
+    .terms {
+      @include font($roboto, 12px, null);
+      color: $gray-3;
+      margin-top: 13px;
+      a {
+        color: #039BE5;
+      }
+    }
+  }
+
+  form {
+    @include margin(34px, null, null, 11.5%);
+    width: 72.5%;
+    .form-control {
+      @include font($roboto, 15px, null);
+      border-color: $gray-2;
+      &:focus {
+        border: 1px solid $blue-1;
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+// TABLET
+@media #{$tablet} {
+  .sign-up-form {
+    display: none;
+  }
+}
+
+// MOBILE
+@media #{$mobile} {
+  .sign-up-form {
+    display: none;
+  }
+}

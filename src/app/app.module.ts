@@ -12,6 +12,7 @@ import { BillResultsComponent } from './bill-results/bill-results.component';
 import { LegislatorResultsComponent } from './legislator-results/legislator-results.component';
 import { BillDetailsComponent } from './bill-details/bill-details.component';
 import { LegislatorDetailsComponent } from './legislator-details/legislator-details.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 
 @NgModule({
@@ -33,10 +34,6 @@ import { LegislatorDetailsComponent } from './legislator-details/legislator-deta
     routing
   ],
   providers: [],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
-: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

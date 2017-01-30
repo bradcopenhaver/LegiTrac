@@ -1,0 +1,21 @@
+.footer {
+  background: $blue-gray-4;
+  clear: both;
+  height: 72px;
+  .logo a {
+    @include font($montserrat, 22px, null);
+    @include margin(20px, null, null, 30px);
+    color: $white;
+    float: left;
+    transition-duration: .25s;
+    .tm {
+      @include font($roboto, 2px, null);
+      color: $white;
+      float: right;
+      margin-top: 10px;
+    }
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

@@ -1,17 +1,3 @@
-@import './scss/base/variables';
-@import './scss/base/mixins';
-
-
-*, p {
-  margin: 0;
-  padding: 0;
-  body {
-    background: $gray-2;
-    margin: auto;
-    max-width: 1440px;
-  }
-}
-
 .header {
   background: $white;
   border-bottom: 1px solid $gray-2;
@@ -51,28 +37,6 @@
     transition-duration: .25s;
     &:hover {
       color: $gray-5;
-    }
-  }
-}
-
-.footer {
-  background: $blue-gray-4;
-  clear: both;
-  height: 72px;
-  .logo a {
-    @include font($montserrat, 22px, null);
-    @include margin(20px, null, null, 30px);
-    color: $white;
-    float: left;
-    transition-duration: .25s;
-    .tm {
-      @include font($roboto, 2px, null);
-      color: $white;
-      float: right;
-      margin-top: 10px;
-    }
-    &:hover {
-      text-decoration: none;
     }
   }
 }

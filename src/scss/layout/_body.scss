@@ -1,8 +1,17 @@
-// COLORS
+*, p {
+  margin: 0;
+  padding: 0;
+  body {
+    background: $gray-2;
+    margin: auto;
+    max-width: 1440px;
+  }
+  img {
+    width: 100%;
+  }
+}
 
-@import '../../scss/base/variables';
-@import '../../scss/base/mixins';
-
+// DESKTOP
 @media #{$desktop} {
   .banner {
     float: left;
@@ -11,7 +20,6 @@
     .banner-img {
       height: 500px;
       object-fit: cover;
-      width: 100%;
     }
     .banner-text-1 {
       @include color($white, $blue-gray-4);
