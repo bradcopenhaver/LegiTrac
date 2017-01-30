@@ -1,0 +1,81 @@
+@import '../scss/mixins';
+@import '../scss/variables';
+
+
+*, p {
+  margin: 0;
+  padding: 0;
+  body {
+    background: $gray-2;
+    margin: auto;
+    max-width: 1440px;
+  }
+  img {
+    width: 100%;
+  }
+}
+
+.header {
+  background: $white;
+  border-bottom: 1px solid $gray-2;
+  height: 64px;
+  .new-logo {
+    width: 40px;
+    position: absolute;
+    margin-left: 30px;
+    margin-top: 12px;
+  }
+  .logo a {
+    @include font($montserrat, 25px, null);
+    @include margin(14px, null, null, 80px);
+    float: left;
+    .blue {
+      color: #1755AA;
+    }
+    .red {
+      color: #E31E24;
+    }
+    .tm {
+      @include font($roboto, 2.5px, null);
+      color: $gray-4;
+      float: right;
+      margin-top: 12px;
+    }
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .glyphicon-search {
+    @include margin(24px, 30px, null, null);
+    color: $gray-4;
+    float: right;
+    font-size: 16px;
+    transition-duration: .25s;
+    &:hover {
+      color: $gray-5;
+    }
+  }
+}
+
+.footer {
+  background: $blue-gray-4;
+  clear: both;
+  height: 72px;
+  .logo a {
+    @include font($montserrat, 22px, null);
+    @include margin(20px, null, null, 30px);
+    color: $white;
+    float: left;
+    transition-duration: .25s;
+    .tm {
+      @include font($roboto, 2px, null);
+      color: $white;
+      float: right;
+      margin-top: 10px;
+    }
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

@@ -1,0 +1,62 @@
+@import '../scss/mixins';
+@import '../scss/variables';
+
+@media #{$desktop} {
+  .banner {
+    float: left;
+    position: relative;
+    width: 100%;
+    .banner-img {
+      height: 500px;
+      object-fit: cover;
+    }
+    .banner-text-1 {
+      @include color($white, $blue-gray-4);
+      @include font($roboto, 32px, 400);
+      @include padding(25px, 73px, null, 33px);
+      @include size(700px, 250px);
+      opacity: 0.9;
+      position: absolute;
+      top: 100px;
+      left: 0;
+      right: 0;
+      margin: auto;
+      text-align: center;
+    }
+    .banner-text-2 {
+      @include font($roboto, 15px, 300);
+      width: 600px;
+      color: $white;
+      position: absolute;
+      top: 180px;
+      left: 0;
+      right: 0;
+      margin: auto;
+      a {
+        color: $gray-3;
+      }
+    }
+  }
+
+  .poll-1 {
+    @include margin(2.4%, null, 2.4%, 2.4%);
+    @include size(31.4%, 383px);
+    background: $gray-1;
+    border-radius: 5px;
+    float: left;
+    .poll-1-question {
+      @include color($white, $blue-3);
+      @include font($roboto, 19px, 300);
+      @include padding(13px, 32px, 13px, 19px);
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
+    }
+    .results a {
+      color: $gray-4;
+      float: left;
+      .thumbs {
+        @include font($roboto, 17px, null);
+      }
+    }
+  }
+}
