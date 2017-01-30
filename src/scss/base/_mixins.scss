@@ -1,0 +1,42 @@
+// COLOR
+@mixin color($color, $background) {
+  color: $color;
+  background: $background;
+}
+
+// FONT
+@mixin font($font, $size, $weight) {
+  font-family: $font;
+  font-size: $size;
+  font-weight: $weight;
+}
+
+// MARGIN
+@mixin margin($margin-top, $margin-right, $margin-bottom, $margin-left) {
+  margin-top: $margin-top;
+  margin-right: $margin-right;
+  margin-bottom: $margin-bottom;
+  margin-left: $margin-left;
+}
+
+// PADDING
+@mixin padding($padding-top, $padding-right, $padding-bottom, $padding-left) {
+  padding-top: $padding-top;
+  padding-right: $padding-right;
+  padding-bottom: $padding-bottom;
+  padding-left: $padding-left;
+}
+
+// POSITION
+@mixin position($top, $right, $bottom, $left) {
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+// SIZE
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
