@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { routing } from './app.routing';
 
 import { AppComponent } from './app.component';
 import { ApiRequestComponent } from './api-request/api-request.component';
@@ -11,7 +12,6 @@ import { BillResultsComponent } from './bill-results/bill-results.component';
 import { LegislatorResultsComponent } from './legislator-results/legislator-results.component';
 import { BillDetailsComponent } from './bill-details/bill-details.component';
 import { LegislatorDetailsComponent } from './legislator-details/legislator-details.component';
-import { WelcomeComponent } from './welcome/welcome.component';
 
 
 @NgModule({
@@ -29,9 +29,14 @@ import { WelcomeComponent } from './welcome/welcome.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    routing
   ],
   providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
