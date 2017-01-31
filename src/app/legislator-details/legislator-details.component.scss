@@ -3,7 +3,7 @@
 
 .legislator-detail {
   @include margin(2.5%, null, 2.5%, 2.5%);
-  @include size(30%, 650px);
+  @include size(30%, 100%);
   background: $white;
   border-radius: 5px;
   float: left;
