@@ -5,7 +5,7 @@ import {LegislatorService} from '../legislator.service';
 @Component({
   selector: 'app-legislator-results',
   templateUrl: './legislator-results.component.html',
-  styleUrls: ['./legislator-results.component.css'],
+  styleUrls: ['./legislator-results.component.scss'],
   providers: [LegislatorService]
 })
 export class LegislatorResultsComponent implements OnInit {

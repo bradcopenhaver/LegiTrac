@@ -31,7 +31,7 @@
       }
     }
     .banner-text-2 {
-      @include font($roboto, 20px, 300);
+      @include font($roboto, 22px, 300);
       @include padding(null, 30px, null, 30px);
       text-align: center;
       width: 600px;
@@ -46,7 +46,7 @@
       }
     }
     .banner-text-2-2 {
-      @include font($roboto, 20px, 300);
+      @include font($roboto, 22px, 300);
       @include padding(null, 60px, null, 60px);
       text-align: center;
       width: 600px;
@@ -80,25 +80,22 @@
     }
   }
 
-  // .poll-1 {
-  //   @include margin(2.4%, null, 2.4%, 2.4%);
-  //   @include size(31.4%, 383px);
-  //   background: $gray-1;
-  //   border-radius: 5px;
-  //   float: left;
-  //   .poll-1-question {
-  //     @include color($white, #B71C1C);
-  //     @include font($roboto, 19px, 300);
-  //     @include padding(13px, 32px, 13px, 19px);
-  //     border-top-right-radius: 5px;
-  //     border-top-left-radius: 5px;
-  //   }
-  //   .results a {
-  //     color: $gray-4;
-  //     float: left;
-  //     .thumbs {
-  //       @include font($roboto, 17px, null);
-  //     }
-  //   }
-  // }
+  .bill-welcome {
+    @include margin(2.5%, null, 2.5%, 2.5%);
+    @include size(30%, 250px);
+    background: $gray-1;
+    border-radius: 5px;
+    float: left;
+    .bill-name-2 {
+      @include color($white, #1755AA);
+      @include font($roboto, 19px, 300);
+      @include padding(13px, 32px, 13px, 19px);
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
+    }
+    li {
+      @include margin(10px, 15px, null, 15px);
+      color: $blue-gray-4
+    }
+  }
 }

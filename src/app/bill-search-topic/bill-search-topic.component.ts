@@ -16,6 +16,6 @@ export class BillSearchTopicComponent implements OnInit {
   }
 
   searchBillCommittee(selectedCommittee) {
-    
+
   }
 }
