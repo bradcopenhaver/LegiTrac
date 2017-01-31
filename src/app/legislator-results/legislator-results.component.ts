@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router, ActivatedRoute, Params} from '@angular/router';
 import {LegislatorService} from '../legislator.service';
+import { CapitalizePipe } from "../capitalize.pipe";
 
 @Component({
   selector: 'app-legislator-results',
@@ -10,7 +11,7 @@ import {LegislatorService} from '../legislator.service';
 })
 export class LegislatorResultsComponent implements OnInit {
   zipInput: string;
-  arrayOfMemberData;
+  legislators;
 
   constructor(private route: ActivatedRoute, private legislatorService: LegislatorService) { }
 
@@ -19,8 +20,8 @@ export class LegislatorResultsComponent implements OnInit {
       this.zipInput = urlParams['zipCode'];
     });
     //Don't forget the async pipe when displaying this data in the template.
-    this.arrayOfMemberData = this.legislatorService.getLegislatorsByZip(this.zipInput);
-
+    this.legislatorService.getLegislatorsByZipCode(this.zipInput).subscribe(data => this.legislators = data);
   }
+
 
 }
