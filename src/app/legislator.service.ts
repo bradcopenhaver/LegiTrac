@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response, Headers, RequestOptions } from "@angular/http";
+import { Http, Response, Headers, RequestOptions, Jsonp } from "@angular/http";
 import { apiKey } from './apiKey';
 import { Observable } from "rxjs";
 import 'rxjs/add/operator/catch';
@@ -10,7 +10,7 @@ export class LegislatorService {
   headers: Headers = new Headers({'X-API-Key': apiKey});
   options: RequestOptions;
 
-  constructor(private http: Http) {
+  constructor(private http: Http, private _jsonp: Jsonp) {
     this.options = new RequestOptions({headers: this.headers});
   }
 
@@ -28,6 +28,12 @@ export class LegislatorService {
 
   getRecentBills(type = 'introduced', chamber = 'senate', congress = '115') {
     return this.proPublicaRequest(`https://api.propublica.org/congress/v1/${congress}/${chamber}/bills/${type}.json`)
+  }
+
+  getLegislatorsByZipCode(zipCode) {
+    return this.http.get(`https://congress.api.sunlightfoundation.com/legislators/locate?zip=${zipCode}`)
+      .map(LegislatorService.extractData)
+      .catch(LegislatorService.handleError)
   }
 
 
@@ -56,13 +62,4 @@ export class LegislatorService {
     return Observable.throw(errMsg);
   }
 
-  getLegislatorsByZip(zipInput) {
-    //input is a zip code. use whoismyrep API to get names, then use our Firebase
-    //database to get member IDs for each name. Return string of IDs concatted and
-    //separated by +
-  }
-
-  getLegislatorById(memberId) {
-
-  }
 }
