@@ -5,23 +5,22 @@ import {LegislatorService} from '../legislator.service';
 @Component({
   selector: 'app-legislator-results',
   templateUrl: './legislator-results.component.html',
-  styleUrls: ['./legislator-results.component.css']
+  styleUrls: ['./legislator-results.component.css'],
+  providers: [LegislatorService]
 })
 export class LegislatorResultsComponent implements OnInit {
-  stringOfMemberIds: string;
-  arrayOfMemberData = [];
+  zipInput: string;
+  arrayOfMemberData;
 
   constructor(private route: ActivatedRoute, private legislatorService: LegislatorService) { }
 
   ngOnInit() {
     this.route.params.forEach((urlParams) => {
-      this.stringOfMemberIds = urlParams['ids'];
+      this.zipInput = urlParams['zipInput'];
     });
-    var idArray = this.stringOfMemberIds.split("+");
     //Don't forget the async pipe when displaying this data in the template.
-    idArray.forEach(id => {
-      this.arrayOfMemberData.push(/*this.legislatorService.getLegislatorById(id)*/);
-    })
+    this.arrayOfMemberData = this.legislatorService.getLegislatorsByZip(this.zipInput);
+
   }
 
 }
