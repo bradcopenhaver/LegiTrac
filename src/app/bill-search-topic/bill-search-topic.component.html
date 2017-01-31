@@ -1,5 +1,5 @@
-<div class="search-section">
-  <form>
+<div>
+  <form class="search-section">
     <select #billCommitteeSearch class="form-control search-bar">
       <option>Select...</option>
       <optgroup label="Senate Committees">
@@ -55,6 +55,6 @@
         <option>Joint Taxation</option>
       </optgroup>
     </select>
-    <button class="btn search-button" type="submit" (click)="searchBillCommittee(billCommitteeSearch.value)">Submit</button>
+    <button class="btn search-button" type="submit" (click)="searchBillCommittee(billCommitteeSearch.value)">Search</button>
   </form>
 </div>
