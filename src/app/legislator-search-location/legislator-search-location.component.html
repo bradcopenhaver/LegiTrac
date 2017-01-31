@@ -1,3 +1,4 @@
-<p>
-  legislator-search-location works!
-</p>
+<form>
+  <input #zipCodeSearch type='number' required>
+  <button type="submit" (click)="searchZip(zipCodeSearch.value)">Submit</button>
+</form>
