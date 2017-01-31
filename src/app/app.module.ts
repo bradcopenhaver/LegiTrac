@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpModule, JsonpModule } from '@angular/http';
 import { routing } from './app.routing';
 
 import { AppComponent } from './app.component';
@@ -13,6 +13,8 @@ import { LegislatorResultsComponent } from './legislator-results/legislator-resu
 import { BillDetailsComponent } from './bill-details/bill-details.component';
 import { LegislatorDetailsComponent } from './legislator-details/legislator-details.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { CapitalizePipe } from './capitalize.pipe';
+import { PartyNamePipe } from './party-name.pipe';
 
 
 @NgModule({
@@ -25,12 +27,15 @@ import { WelcomeComponent } from './welcome/welcome.component';
     LegislatorResultsComponent,
     BillDetailsComponent,
     LegislatorDetailsComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    CapitalizePipe,
+    PartyNamePipe
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    JsonpModule,
     routing
   ],
   providers: [],

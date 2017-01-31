@@ -28,7 +28,7 @@ export class LegislatorDetailsComponent implements OnInit {
   }
 
   getLegislator(legislatorId) {
-    this.legislatorService.getLegislator(legislatorId).subscribe(data => this.legislator = data);
+    this.legislatorService.getLegislator(legislatorId).subscribe(data => this.legislator = data[0]);
   }
 
 
