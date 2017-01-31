@@ -12,6 +12,22 @@ import { WelcomeComponent } from './welcome/welcome.component';
 const appRoutes: Routes = [   {
     path: '',
     component: WelcomeComponent
+  },
+  {
+    path: 'legislator-results/:idString',
+    component: LegislatorResultsComponent
+  },
+  {
+    path: 'legislator-details/:memberId',
+    component: LegislatorDetailsComponent
+  },
+  {
+    path: 'bill-details/:billId',
+    component: BillDetailsComponent
+  },
+  {
+    path: 'bill-results/:idString',
+    component: BillResultsComponent
   }
 ];
 
