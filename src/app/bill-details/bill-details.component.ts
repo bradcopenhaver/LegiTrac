@@ -1,24 +1,32 @@
 import { Component, OnInit } from '@angular/core';
 import {Router, ActivatedRoute, Params} from '@angular/router';
-import {BillService} from '../bill.service';
+import { LegislatorService } from "../legislator.service";
+
 
 @Component({
   selector: 'app-bill-details',
   templateUrl: './bill-details.component.html',
   styleUrls: ['./bill-details.component.css'],
-  providers: [BillService]
+  providers: [LegislatorService]
 })
 export class BillDetailsComponent implements OnInit {
-  billId;
-  billToDisplay;
+  billId: number;
+  bill;
+  recent;
 
-  constructor(private billService: BillService, private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private legislatorService: LegislatorService) { }
 
   ngOnInit() {
-    this.route.params.forEach((urlParams) => {
-      this.billId = urlParams['billId'];
+    this.route.params.forEach(params => {
+      this.bill = this.getBill(params['billId']);
+      this.getRecentBills()
     });
-    //this.billToDisplay = this.billService.getBillById(this.billId);
   }
 
+  getBill(billId) {
+    this.legislatorService.getBill(billId).subscribe(data => this.bill = data);
+  }
+  getRecentBills() {
+    this.legislatorService.getRecentBills().subscribe(data => this.recent = data)
+  }
 }

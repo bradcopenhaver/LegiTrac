@@ -12,21 +12,19 @@ import { WelcomeComponent } from './welcome/welcome.component';
 const appRoutes: Routes = [   {
     path: '',
     component: WelcomeComponent
-  },
-  {
-    path: 'legislator-results/:idString',
-    component: LegislatorResultsComponent
-  },
-  {
-    path: 'legislator-details/:memberId',
+  }, {
+    path: 'legislators/:legislatorId',
     component: LegislatorDetailsComponent
-  },
-  {
-    path: 'bill-details/:billId',
+  }, {
+    path: 'bills/:billId',
     component: BillDetailsComponent
   },
   {
-    path: 'bill-results/:idString',
+    path: 'legislators/search/:zipCode',
+    component: LegislatorResultsComponent
+  },
+  {
+    path: 'bills/committees/:committee',
     component: BillResultsComponent
   }
 ];
