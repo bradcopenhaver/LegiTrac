@@ -1,23 +1,41 @@
 
 <div class="legislator-detail">
   <p class="leg-name-1">{{(legislator)?.first_name}} {{(legislator)?.last_name}}</p>
+  <ul style="list-style:none;">
+    <li><strong>Party:</strong> {{(legislator)?.current_party}}</li>
+    <li><strong>Chamber:</strong> {{(legislator)?.roles[0].chamber}}</li>
+    <li><strong>Title:</strong> {{(legislator)?.roles[0].title}}</li>
+    <li><strong>State:</strong> {{(legislator)?.roles[0].state}}</li>
+    <li><strong>Date of Birth:</strong> <em>{{(legislator)?.date_of_birth}}</em></li>
+    <li><strong>Gender:</strong> {{(legislator)?.gender}}</li>
+    <li><strong>Years In Office:</strong> {{(legislator)?.roles[0].seniority}}
+    <li><strong>Twitter:</strong> <a href="https://twitter.com/{{(legislator)?.twitter_account}}">{{(legislator)?.twitter_account}}</a></li>
+    <li><strong>Facebook:</strong> <a href="https://facebook.com/{{(legislator)?.facebook_account}}">{{(legislator)?.facebook_account}}</a></li>
+    <li><strong>Start of current term:</strong> {{(legislator)?.roles[0].start_date}}</li>
+    <li><strong>End of current term:</strong> {{(legislator)?.roles[0].end_date}}</li>
+  </ul>
+  <div>
+    <p class="leg-name-1">Current Term</p>
     <ul style="list-style:none;">
-      <li><strong>Party:</strong> {{(legislator)?.current_party}}</li>
-      <li><strong>Chamber:</strong> {{(legislator)?.roles[0].chamber}}</li>
-      <li><strong>Title:</strong> {{(legislator)?.roles[0].title}}</li>
       <li><strong>State:</strong> {{(legislator)?.roles[0].state}}</li>
-      <li><strong>Date of Birth:</strong> <em>{{(legislator)?.date_of_birth}}</em></li>
-      <li><strong>Gender:</strong> {{(legislator)?.gender}}</li>
-      <li><strong>Twitter:</strong> <a href="https://twitter.com/{{(legislator)?.twitter_account}}">{{(legislator)?.twitter_account}}</a></li>
-      <li><strong>Facebook:</strong> <a href="https://facebook.com/{{(legislator)?.facebook_account}}">{{(legislator)?.facebook_account}}</a></li>
-      <li><strong>Start Date:</strong> {{(legislator)?.roles[0].start_date}}</li>
-      <li><strong>End Date:</strong> {{(legislator)?.roles[0].end_date}}</li>
-      <li><strong>State:</strong> {{(legislator)?.roles[0].state}}</li>
-      <li><strong>State:</strong> {{(legislator)?.roles[0].bills_sponsored}}</li>
-      <li><strong>State:</strong> {{(legislator)?.roles[0].state}}</li>
-      <li><strong>State:</strong> {{(legislator)?.roles[0].state}}</li>
-      <li><strong>State:</strong> {{(legislator)?.roles[0].state}}</li>
+      <li><strong>Bills Sponsored:</strong> {{(legislator)?.roles[0].bills_sponsored}}</li>
+      <li><strong>Bills Cosponsored:</strong> {{(legislator)?.roles[0].bills_cosponsored}}</li>
+      <li><strong>Votes along party lines {{(legislator)?.roles[0].votes_with_party_pct}}% of the time.</strong> </li>
+      <li><strong>Committees:</strong>
+        <ul>
+          <li *ngFor="let committee of (legislator)?.roles[0].committees">{{committee.name}}</li>
+        </ul>
+      </li>
     </ul>
+  </div>
+</div>
+<div *ngIf="voteHistory">
+  <h3>Vote History</h3>
+  <p>{{voteHistory[0].total_votes}}
+  <div *ngFor="let vote of voteHistory[0].votes">
+    <h5>{{vote.description}}</h5>
+    <p>Voted {{vote.position}} {{vote.question}}. {{vote.date}} {{vote.time}}</p>
+  </div>
 </div>
 <h3>Legislator Data</h3>
 <pre><code>{{legislator | json}}</code></pre>
