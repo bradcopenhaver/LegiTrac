@@ -9,29 +9,35 @@
     position: relative;
     width: 100%;
     .banner-img {
-      height: 500px;
+      height: 400px;
       object-fit: cover;
       width: 100%;
     }
     .banner-text-1 {
       @include color($white, $blue-gray-4);
       @include font($roboto, 32px, 400);
-      @include padding(25px, 73px, null, 33px);
-      @include size(700px, 250px);
+      @include padding(25px, 100px, null, 70px);
+      @include size(650px, 250px);
       opacity: 0.9;
       position: absolute;
-      top: 100px;
+      top: 80px;
       left: 0;
       right: 0;
       margin: auto;
       text-align: center;
+      .second {
+        padding-left: 500px;
+        padding-right: 500px;
+      }
     }
     .banner-text-2 {
-      @include font($roboto, 15px, 300);
+      @include font($roboto, 22px, 300);
+      @include padding(null, 30px, null, 30px);
+      text-align: center;
       width: 600px;
       color: $white;
       position: absolute;
-      top: 180px;
+      top: 170px;
       left: 0;
       right: 0;
       margin: auto;
@@ -39,27 +45,57 @@
         color: $gray-3;
       }
     }
+    .banner-text-2-2 {
+      @include font($roboto, 22px, 300);
+      @include padding(null, 60px, null, 60px);
+      text-align: center;
+      width: 600px;
+      color: $white;
+      position: absolute;
+      top: 170px;
+      left: 0;
+      right: 0;
+      margin: auto;
+      a {
+        color: $gray-3;
+      }
+    }
+    .search-section {
+      position: absolute;
+      top: 270px;
+      display: flex;
+      width: 30%;
+      left: 0;
+      right: 0;
+      margin: auto;
+      .search-bar {
+        float: left;
+      }
+      .search-button {
+        float: right;
+        margin-left: 7px;
+        background-color: #607D8B;
+        color: $white;
+      }
+    }
   }
 
-  .poll-1 {
-    @include margin(2.4%, null, 2.4%, 2.4%);
-    @include size(31.4%, 383px);
+  .bill-welcome {
+    @include margin(2.5%, null, 2.5%, 2.5%);
+    @include size(30%, 250px);
     background: $gray-1;
     border-radius: 5px;
     float: left;
-    .poll-1-question {
-      @include color($white, $blue-3);
+    .bill-name-2 {
+      @include color($white, #1755AA);
       @include font($roboto, 19px, 300);
       @include padding(13px, 32px, 13px, 19px);
       border-top-right-radius: 5px;
       border-top-left-radius: 5px;
     }
-    .results a {
-      color: $gray-4;
-      float: left;
-      .thumbs {
-        @include font($roboto, 17px, null);
-      }
+    li {
+      @include margin(10px, 15px, null, 15px);
+      color: $blue-gray-4
     }
   }
 }

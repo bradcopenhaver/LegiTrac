@@ -18,6 +18,14 @@ const appRoutes: Routes = [   {
   }, {
     path: 'bills/:billId',
     component: BillDetailsComponent
+  },
+  {
+    path: 'legislators/search/:zipCode',
+    component: LegislatorResultsComponent
+  },
+  {
+    path: 'bills/committees/:committee',
+    component: BillResultsComponent
   }
 ];
 

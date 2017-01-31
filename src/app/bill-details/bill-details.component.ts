@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Router, ActivatedRoute, Params} from '@angular/router';
 import { LegislatorService } from "../legislator.service";
-import { ActivatedRoute } from "@angular/router";
+
 
 @Component({
   selector: 'app-bill-details',
@@ -9,6 +10,7 @@ import { ActivatedRoute } from "@angular/router";
   providers: [LegislatorService]
 })
 export class BillDetailsComponent implements OnInit {
+  billId: number;
   bill;
   recent;
 

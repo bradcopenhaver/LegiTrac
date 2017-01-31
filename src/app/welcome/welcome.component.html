@@ -1,29 +1,52 @@
-
-
-<div class="header">
-  <div class="logo">
-    <img class="new-logo" src="img/logo.png">
-    <a href="#"><span class="blue">Legi</span><span class="red">Trac</span><span class="tm">TM</span></a>
-  </div>
-  <a href="#"><i class="glyphicon glyphicon-search"></i></a>
-</div>
-
 <div class="banner">
   <img class="banner-img" src="img/banner.jpg">
   <p class="banner-text-1">Find Your Representative</p>
-  <p class="banner-text-2">Not sure of your congressional district or who your member is? This service will assist you by matching your ZIP code to your congressional district, with links to your member's website and contact page.</p>
-</div>
-
-<div class="poll-1">
-  <p class="poll-1-question">H.R. 586: Sanctity of Human Life Act</p>
-  <div class="results">
-    <span class="thumbs">To provide that human life shall be deemed to begin with fertilization.</span>
-    <p class="name">Jody Hice</p>
+  <p class="banner-text-2">Enter your zipcode to learn more about the senators and representatives in your area.</p>
+  <div class="search-section">
+    <input class="form-control search-bar" #newLocation>
+    <button class="btn search-button" (click)="submitForm(newLocation.value)">Search</button>
   </div>
 </div>
 
-<div class="footer">
-  <div class="logo">
-    <a href="#"><span class="blue">Legi</span><span class="red">Trac</span><span class="tm">TM</span></a>
+<div class="banner">
+  <img class="banner-img" src="img/banner2.jpg">
+  <p class="banner-text-1">Search Congressional Bills</p>
+  <p class="banner-text-2-2">Select a committee to learn more about the bills that matter to you.</p>
+    <app-bill-search-topic></app-bill-search-topic>
+</div>
+
+
+
+<div class="bill-welcome">
+  <p class="bill-name-2">Midnight Rules Relief Act of 2017</p>
+  <div class="results">
+    <ul style="list-style:none;">
+      <li><strong>Number:</strong> H.R. 2393</li>
+      <li><strong>Committees:</strong> House Agriculture Committee</li>
+      <li><strong>Sponsor:</strong> Darrell Issa</li>
+      <li><strong>Most Recent Action:</strong><p>Received in the Senate and Read twice and referred to the Committee on Homeland Security and Governmental Affairs</p></li>
+    </ul>
+  </div>
+</div>
+<div class="bill-welcome">
+  <p class="bill-name-2">Midnight Rules Relief Act of 2017</p>
+  <div class="results">
+    <ul style="list-style:none;">
+      <li><strong>Number:</strong> H.R. 2393</li>
+      <li><strong>Committees:</strong> House Agriculture Committee</li>
+      <li><strong>Sponsor:</strong> Darrell Issa</li>
+      <li><strong>Most Recent Action:</strong><p>Received in the Senate and Read twice and referred to the Committee on Homeland Security and Governmental Affairs</p></li>
+    </ul>
+  </div>
+</div>
+<div class="bill-welcome">
+  <p class="bill-name-2">Midnight Rules Relief Act of 2017</p>
+  <div class="results">
+    <ul style="list-style:none;">
+      <li><strong>Number:</strong> H.R. 2393</li>
+      <li><strong>Committees:</strong> House Agriculture Committee</li>
+      <li><strong>Sponsor:</strong> Darrell Issa</li>
+      <li><strong>Most Recent Action:</strong><p>Received in the Senate and Read twice and referred to the Committee on Homeland Security and Governmental Affairs</p></li>
+    </ul>
   </div>
 </div>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { LegislatorService } from "../legislator.service";
-import { ActivatedRoute } from "@angular/router";
+import {Router, ActivatedRoute, Params} from '@angular/router';
+import {LegislatorService} from '../legislator.service';
 
 @Component({
   selector: 'app-legislator-details',
@@ -13,7 +13,9 @@ export class LegislatorDetailsComponent implements OnInit {
   legislator: string;
   voteHistory: any;
 
-  constructor(private route: ActivatedRoute, private legislatorService: LegislatorService) {
+  constructor(private route: ActivatedRoute, private legislatorService: LegislatorService) { }
+
+  ngOnInit() {
     this.route.params.forEach(params => {
       this.legislatorId = params['legislatorId'];
       this.getVoteHistory(this.legislatorId);
@@ -29,7 +31,5 @@ export class LegislatorDetailsComponent implements OnInit {
     this.legislatorService.getLegislator(legislatorId).subscribe(data => this.legislator = data);
   }
 
-  ngOnInit() {
-  }
 
 }
