@@ -5,12 +5,12 @@ import {LegislatorService} from '../legislator.service';
 @Component({
   selector: 'app-legislator-details',
   templateUrl: './legislator-details.component.html',
-  styleUrls: ['./legislator-details.component.css'],
+  styleUrls: ['./legislator-details.component.scss'],
   providers: [LegislatorService]
 })
 export class LegislatorDetailsComponent implements OnInit {
   legislatorId: string;
-  legislator: string;
+  legislator: any;
   voteHistory: any;
 
   constructor(private route: ActivatedRoute, private legislatorService: LegislatorService) { }
