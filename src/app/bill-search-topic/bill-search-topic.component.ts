@@ -12,4 +12,7 @@ export class BillSearchTopicComponent implements OnInit {
   ngOnInit() {
   }
 
+  searchBillCommittee(selectedCommittee) {
+    
+  }
 }

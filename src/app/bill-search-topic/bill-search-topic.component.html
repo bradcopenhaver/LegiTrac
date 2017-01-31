@@ -1,3 +1,57 @@
-<p>
-  bill-search-topic works!
-</p>
+<form>
+  <select #billCommitteeSearch>
+    <optgroup label="Senate Committees">
+      <option>Agriculture, Nutrition, and Forestry</option>
+      <option>Appropriations</option>
+      <option>Armed Services</option>
+      <option>Banking, Housing, and Urban Affairs</option>
+      <option>Budget</option>
+      <option>Commerce, Science, and Transportation</option>
+      <option>Energy and Natural Resources</option>
+      <option>Environment and Public Works</option>
+      <option>Finance</option>
+      <option>Foreign Relations</option>
+      <option>Health, Education, Labor, and Pensions</option>
+      <option>Homeland Security and Governmental Affairs</option>
+      <option>Judiciary</option>
+      <option>Rules and Administration</option>
+      <option>Small Business and Entrepreneurship</option>
+      <option>Veterans' Affairs</option>
+      <option>Aging (Special Committee)</option>
+      <option>Ethics (Select Committee)</option>
+      <option>Indian Affairs (Other Committee)</option>
+      <option>Intelligence (Select Committee)</option>
+    </optgroup>
+    <optgroup label="House Committees">
+      <option>Agriculture</option>
+      <option>Appropriations</option>
+      <option>Armed Services</option>
+      <option>Budget</option>
+      <option>Education and the Workforce</option>
+      <option>Energy and Commerce</option>
+      <option>Ethics</option>
+      <option>Financial Services</option>
+      <option>Foreign Affairs</option>
+      <option>Homeland Security</option>
+      <option>House Administration</option>
+      <option>Judiciary</option>
+      <option>Natural Resources</option>
+      <option>Oversight and Government Reform</option>
+      <option>Rules</option>
+      <option>Science, Space, and Technology</option>
+      <option>Small Business</option>
+      <option>Transportation and Infrastructure</option>
+      <option>Veterans' Affairs</option>
+      <option>Ways and Means</option>
+      <option>Permanent Select Committee on Intelligence</option>
+      <option>Select Committee on the Events Surrounding the 2012 Terrorist Attack in Benghazi</option>
+    </optgroup>
+    <optgroup label="Joint Committees">
+      <option>Joint Economic</option>
+      <option>Joint Library</option>
+      <option>Joint Printing</option>
+      <option>Joint Taxation</option>
+    </optgroup>
+  </select>
+  <button type="submit" (click)="searchBillCommittee(billCommitteeSearch.value)">Submit</button>
+</form>

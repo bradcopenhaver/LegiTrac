@@ -9,7 +9,7 @@ import {LegislatorService} from '../legislator.service';
 })
 export class LegislatorResultsComponent implements OnInit {
   stringOfMemberIds: string;
-  arrayOfMemberData;
+  arrayOfMemberData = [];
 
   constructor(private route: ActivatedRoute, private legislatorService: LegislatorService) { }
 

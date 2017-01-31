@@ -16,7 +16,7 @@ export class LegislatorSearchLocationComponent implements OnInit {
   }
 
   searchZip(zipInput: string) {
-    var stringOfMemberIds; // = this.legislatorService.getLegislatorsByZip(zipInput);
+    var stringOfMemberIds = this.legislatorService.getLegislatorsByZip(zipInput);
     this.router.navigate(['legislator-results', stringOfMemberIds]);
   }
 }
