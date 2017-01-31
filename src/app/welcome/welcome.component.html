@@ -1,9 +1,7 @@
-
-
 <div class="header">
   <div class="logo">
     <img class="new-logo" src="img/logo.png">
-    <a href="#"><span class="blue">Legi</span><span class="red">Trac</span><span class="tm">TM</span></a>
+    <a href="#"><span class="blue">Legi</span><span class="red">Trac</span></a>
   </div>
   <a href="#"><i class="glyphicon glyphicon-search"></i></a>
 </div>
@@ -11,8 +9,14 @@
 <div class="banner">
   <img class="banner-img" src="img/banner.jpg">
   <p class="banner-text-1">Find Your Representative</p>
-  <p class="banner-text-2">Not sure of your congressional district or who your member is? This service will assist you by matching your ZIP code to your congressional district, with links to your member's website and contact page.</p>
+  <p class="banner-text-2">Enter your zipcode to learn more about the senators and representatives in your area.</p>
+  <div class="search-section">
+    <input class="form-control search-bar" #newLocation>
+    <button class="btn search-button" (click)="submitForm(newLocation.value)">Search</button>
+  </div>
 </div>
+
+
 
 <div class="poll-1">
   <p class="poll-1-question">H.R. 586: Sanctity of Human Life Act</p>
@@ -24,6 +28,6 @@
 
 <div class="footer">
   <div class="logo">
-    <a href="#"><span class="blue">Legi</span><span class="red">Trac</span><span class="tm">TM</span></a>
+    <a href="#"><span class="blue">Legi</span><span class="red">Trac</span></a>
   </div>
 </div>
