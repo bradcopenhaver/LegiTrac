@@ -5,7 +5,6 @@ import { HttpModule, JsonpModule } from '@angular/http';
 import { routing } from './app.routing';
 
 import { AppComponent } from './app.component';
-import { ApiRequestComponent } from './api-request/api-request.component';
 import { LegislatorSearchLocationComponent } from './legislator-search-location/legislator-search-location.component';
 import { BillSearchTopicComponent } from './bill-search-topic/bill-search-topic.component';
 import { BillResultsComponent } from './bill-results/bill-results.component';
@@ -21,7 +20,6 @@ import { FormatTimePipe } from './format-time.pipe';
 @NgModule({
   declarations: [
     AppComponent,
-    ApiRequestComponent,
     LegislatorSearchLocationComponent,
     BillSearchTopicComponent,
     BillResultsComponent,
