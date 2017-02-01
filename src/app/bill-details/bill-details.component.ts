@@ -2,11 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import {Router, ActivatedRoute, Params} from '@angular/router';
 import { LegislatorService } from "../legislator.service";
 
-
 @Component({
   selector: 'app-bill-details',
   templateUrl: './bill-details.component.html',
-  styleUrls: ['./bill-details.component.css'],
+  styleUrls: ['./bill-details.component.scss'],
   providers: [LegislatorService]
 })
 export class BillDetailsComponent implements OnInit {
