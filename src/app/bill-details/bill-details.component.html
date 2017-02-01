@@ -1,3 +1,22 @@
+<div class="bill-detail">
+  <p class="bill-name-1">{{bill?.bill}} {{(bill)?.title}}</p>
+  <ul style="list-style:none;">
+    <li><strong>Sponsor:</strong> {{(bill)?.sponsor}} with {{(bill)?.cosponsors}} cosponsors</li>
+    <li *ngIf="bill"><strong>Introduced on:</strong> {{bill.introduced_date | formatTime}}</li>
+    <li><strong>Committees:</strong> {{(bill)?.committees}}</li>
+    <li *ngIf="bill"><strong>Last major action:</strong> {{(bill)?.latest_major_action}} On {{bill.latest_major_action_date | formatTime}}</li>
+    <li *ngIf="bill"><strong>Passed in House: </strong> {{bill.house_passage_vote | formatTime}}</li>
+    <li *ngIf="bill"><strong>Passed in Senate:</strong> {{bill.senate_passage_vote | formatTime}}</li>
+    <li *ngIf="bill?.gpo_pdf_uri"><strong>PDF of bill:</strong><a href="{{bill?.gpo_pdf_uri}}"> Link</a></li>
+  </ul>
+  <h4 (click)="toggleActions()">Actions Taken: ({{(bill)?.actions.length}})</h4>
+  <div [class]="actionShowing">
+    <div *ngFor="let action of bill?.actions">
+      <p><strong>Action:</strong> {{action.description}}</p>
+      <p><strong>Date:</strong> {{action.datetime | formatTime}}</p>
+      <br>
+    </div>
+  </div>
+</div>
 <h3>Bill Data</h3>
 <pre><code>{{bill | json}}</code></pre>
-

@@ -2,7 +2,7 @@
 @import '../../scss/base/mixins';
 
 .search-section {
-  @include position(260px, 0, null, 0)
+  @include position(260px, 0, null, 0);
   display: flex;
   margin: auto;
   position: absolute;

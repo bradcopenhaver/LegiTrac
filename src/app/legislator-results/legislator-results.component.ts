@@ -23,9 +23,8 @@ export class LegislatorResultsComponent implements OnInit {
     });
   }
 
-  goToDetail(legislatorId) {
-    this.router.navigate(['legislators', legislatorId]);
+  goToLegislatorDetail(memberId: string) {
+    this.router.navigate(['legislators', memberId]);
   }
-
 
 }

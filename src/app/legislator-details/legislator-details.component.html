@@ -15,31 +15,30 @@
   </ul>
 </div>
 <div class="legislator-detail">
-    <p class="leg-name-1">Current Term</p>
-    <ul style="list-style:none;">
-      <li><strong>State:</strong> {{(legislator)?.roles[0].state}}</li>
-      <li><strong>Bills Sponsored:</strong> {{(legislator)?.roles[0].bills_sponsored}}</li>
-      <li><strong>Bills Cosponsored:</strong> {{(legislator)?.roles[0].bills_cosponsored}}</li>
-      <li><strong>Votes along party lines {{(legislator)?.roles[0].votes_with_party_pct}}% of the time.</strong> </li>
-      <li><strong>Committees:</strong>
-        <ul>
-          <li *ngFor="let committee of (legislator)?.roles[0].committees">{{committee.name}}</li>
-        </ul>
-      </li>
-    </ul>
-  </div>
+  <p class="leg-name-1">Current Term</p>
+  <ul style="list-style:none;">
+    <li><strong>State:</strong> {{(legislator)?.roles[0].state}}</li>
+    <li><strong>Bills Sponsored:</strong> {{(legislator)?.roles[0].bills_sponsored}}</li>
+    <li><strong>Bills Cosponsored:</strong> {{(legislator)?.roles[0].bills_cosponsored}}</li>
+    <li><strong>Votes along party lines {{(legislator)?.roles[0].votes_with_party_pct}}% of the time.</strong> </li>
+    <li><strong>Committees:</strong>
+      <ul>
+        <li *ngFor="let committee of (legislator)?.roles[0].committees">{{committee.name}}</li>
+      </ul>
+    </li>
+  </ul>
+</div>
 <div class="legislator-detail">
-<div class="leg-name-1" *ngIf="voteHistory">
-  <h3>Vote History</h3>
-  <p>{{voteHistory[0].total_votes}}
-  <div *ngFor="let vote of voteHistory[0].votes">
-    <h5>{{vote.description}}</h5>
-    <p>Voted {{vote.position}} {{vote.question}}. {{vote.date}} {{vote.time}}</p>
+  <div class="leg-name-1" *ngIf="voteHistory">
+    <p>Vote History</p>
+    <p class="total-votes">Total Votes: {{voteHistory[0].total_votes}}</p>
+  </div>
+  <div *ngIf="voteHistory">
+    <div *ngFor="let vote of voteHistory[0].votes">
+      <ul style="list-style:none;">
+        <li><strong>Description:</strong> {{vote.description}}</li>
+        <li><strong>Voted:</strong> {{vote.position}} {{vote.question}}. {{vote.date}} {{vote.time}}</li>
+      </ul>
+    </div>
   </div>
 </div>
-</div>
-<!-- <h3>Legislator Data</h3>
-<pre><code>{{legislator | json}}</code></pre>
-
-<h3>Vote History</h3>
-<pre><code>{{voteHistory | json}}</code></pre> -->
