@@ -1,4 +1,3 @@
-
 <div class="legislator-detail">
   <p class="leg-name-1">{{(legislator)?.first_name}} {{(legislator)?.last_name}}</p>
   <ul style="list-style:none;">
@@ -14,7 +13,8 @@
     <li><strong>Start of current term:</strong> {{(legislator)?.roles[0].start_date}}</li>
     <li><strong>End of current term:</strong> {{(legislator)?.roles[0].end_date}}</li>
   </ul>
-  <div>
+</div>
+<div class="legislator-detail">
     <p class="leg-name-1">Current Term</p>
     <ul style="list-style:none;">
       <li><strong>State:</strong> {{(legislator)?.roles[0].state}}</li>
@@ -28,8 +28,8 @@
       </li>
     </ul>
   </div>
-</div>
-<div *ngIf="voteHistory">
+<div class="legislator-detail">
+<div class="leg-name-1" *ngIf="voteHistory">
   <h3>Vote History</h3>
   <p>{{voteHistory[0].total_votes}}</p>
   <div *ngFor="let vote of voteHistory[0].votes">
@@ -37,8 +37,9 @@
     <p>Voted {{vote.position}} {{vote.question}}. {{vote.date}} {{vote.time}}</p>
   </div>
 </div>
-<h3>Legislator Data</h3>
+</div>
+<!-- <h3>Legislator Data</h3>
 <pre><code>{{legislator | json}}</code></pre>
 
 <h3>Vote History</h3>
-<pre><code>{{voteHistory | json}}</code></pre>
+<pre><code>{{voteHistory | json}}</code></pre> -->
