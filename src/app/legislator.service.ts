@@ -51,9 +51,12 @@ export class LegislatorService {
   }
 
   static extractData(res: Response) {
-    console.log(res);
-    let body = JSON.parse(res.text().replace(/&quot;/g,'"'));
-    console.log(body.results[0])
+    let body;
+    try {
+      body = res.json()
+    } catch(e) {
+      body = JSON.parse(res.text().replace(/&quot;/g,'\"'));
+    }
     return body.results || { };
   }
   static handleError (error: Response | any) {

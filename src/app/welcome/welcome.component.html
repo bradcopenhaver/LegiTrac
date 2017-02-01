@@ -16,10 +16,10 @@
 </pre></code> -->
 <div *ngIf="billsArray">
   <div class="bill-welcome" *ngFor="let bill of billsArray[0].bills.slice(0,3)">
-    <p class="bill-name-2">{{bill.title}}</p>
+    <p class="bill-name-2">Bill {{bill.number}}</p>
     <div class="results">
       <ul style="list-style:none;">
-        <li><strong>Number:</strong> {{bill.number}}</li>
+        <li><strong>Title:</strong> {{bill.title}}</li>
         <li><strong>Committees:</strong> {{bill.committees}}</li>
         <li><strong></strong> </li>
         <li><strong>Most Recent Action: {{bill.introduced_date}}</strong> <p>{{bill.latest_major_action}}</p></li>
