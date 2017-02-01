@@ -1,5 +1,5 @@
 <div class="bill-detail">
-  <p class="bill-name-1">{{bill?.bill}} {{(bill)?.title}}</p>
+  <p class="bill-name-1"><i class="glyphicon glyphicon-list-alt"></i>{{bill?.bill}} {{(bill)?.title}}</p>
   <ul style="list-style:none;">
     <li><strong>Sponsor:</strong> {{(bill)?.sponsor}} with {{(bill)?.cosponsors}} cosponsors</li>
     <li *ngIf="bill"><strong>Introduced on:</strong> {{bill.introduced_date | formatTime}}</li>
@@ -7,11 +7,11 @@
     <li *ngIf="bill"><strong>Last major action:</strong> {{(bill)?.latest_major_action}} On {{bill.latest_major_action_date | formatTime}}</li>
     <li *ngIf="bill"><strong>Passed in House: </strong> {{bill.house_passage_vote | formatTime}}</li>
     <li *ngIf="bill"><strong>Passed in Senate:</strong> {{bill.senate_passage_vote | formatTime}}</li>
-    <li *ngIf="bill?.gpo_pdf_uri"><strong>PDF of bill:</strong><a href="{{bill?.gpo_pdf_uri}}"> Link</a></li>
+    <li *ngIf="bill?.gpo_pdf_uri"><strong>PDF of bill:</strong><a href="{{bill?.gpo_pdf_uri}}"> View PDF</a></li>
   </ul>
 </div>
 <div class="bill-detail">
-  <p class="bill-name-1" (click)="toggleActions()">Actions Taken: ({{(bill)?.actions.length}}) <b class="caret"></b></p>
+  <p class="bill-name-1" (click)="toggleActions()"><i class="glyphicon glyphicon-exclamation-sign"></i>Actions Taken: ({{(bill)?.actions.length}})<i class="glyphicon glyphicon-triangle-bottom show-more"></i></p>
   <div [class]="actionShowing">
     <ul style="list-style:none;" *ngFor="let action of bill?.actions">
       <li><strong>Action:</strong> {{action.description}}</li>
