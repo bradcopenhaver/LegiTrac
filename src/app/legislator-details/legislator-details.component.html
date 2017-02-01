@@ -31,7 +31,7 @@
 </div>
 <div *ngIf="voteHistory">
   <h3>Vote History</h3>
-  <p>{{voteHistory[0].total_votes}}
+  <p>{{voteHistory[0].total_votes}}</p>
   <div *ngFor="let vote of voteHistory[0].votes">
     <h5>{{vote.description}}</h5>
     <p>Voted {{vote.position}} {{vote.question}}. {{vote.date}} {{vote.time}}</p>

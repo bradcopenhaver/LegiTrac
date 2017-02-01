@@ -2,10 +2,7 @@
   <img class="banner-img" src="img/banner.jpg">
   <p class="banner-text-1">Find Your Representative</p>
   <p class="banner-text-2">Enter your zipcode to learn more about the senators and representatives in your area.</p>
-  <div class="search-section">
-    <input class="form-control search-bar" #newLocation>
-    <button class="btn search-button" (click)="submitForm(newLocation.value)">Search</button>
-  </div>
+  <app-legislator-search-location></app-legislator-search-location>
 </div>
 
 <div class="banner">

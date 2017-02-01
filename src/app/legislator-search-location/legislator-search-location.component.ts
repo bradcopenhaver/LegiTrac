@@ -4,7 +4,7 @@ import {Router} from '@angular/router';
 @Component({
   selector: 'app-legislator-search-location',
   templateUrl: './legislator-search-location.component.html',
-  styleUrls: ['./legislator-search-location.component.css']
+  styleUrls: ['./legislator-search-location.component.scss']
 })
 export class LegislatorSearchLocationComponent implements OnInit {
 
@@ -14,6 +14,6 @@ export class LegislatorSearchLocationComponent implements OnInit {
   }
 
   searchZip(zipInput: string) {
-    this.router.navigate(['legislator-results', zipInput]);
+    this.router.navigate(['legislators/search/', zipInput]);
   }
 }

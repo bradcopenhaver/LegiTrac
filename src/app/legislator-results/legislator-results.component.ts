@@ -13,7 +13,7 @@ export class LegislatorResultsComponent implements OnInit {
   zipInput: string;
   legislators;
 
-  constructor(private route: ActivatedRoute, private legislatorService: LegislatorService) { }
+  constructor(private route: ActivatedRoute, private legislatorService: LegislatorService, private router: Router) { }
 
   ngOnInit() {
     this.route.params.forEach((urlParams) => {
@@ -23,5 +23,8 @@ export class LegislatorResultsComponent implements OnInit {
     this.legislatorService.getLegislatorsByZipCode(this.zipInput).subscribe(data => this.legislators = data);
   }
 
+  goToLegislatorDetail(memberId: string) {
+    this.router.navigate(['legislators', memberId]);
+  }
 
 }
