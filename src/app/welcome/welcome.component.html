@@ -11,39 +11,20 @@
   <p class="banner-text-2-2">Select a committee to learn more about the bills that matter to you.</p>
   <app-bill-search-topic></app-bill-search-topic>
 </div>
-
-<div class="bill-welcome">
-  <p class="bill-name-2">Midnight Rules Relief Act of 2017</p>
-  <div class="results">
-    <ul style="list-style:none;">
-      <li><strong>Number:</strong> H.R. 2393</li>
-      <li><strong>Committees:</strong> House Agriculture Committee</li>
-      <li><strong>Sponsor:</strong> Darrell Issa</li>
-      <li><strong>Most Recent Action:</strong> Received in the Senate and Read twice and referred to the Committee on Homeland Security and Governmental Affairs</li>
-    </ul>
+<!-- <code><pre>
+  {{billsArray | json}}
+</pre></code> -->
+<div *ngIf="billsArray">
+  <div class="bill-welcome" *ngFor="let bill of billsArray[0].bills.slice(0,3)">
+    <p class="bill-name-2">{{bill.title}}</p>
+    <div class="results">
+      <ul style="list-style:none;">
+        <li><strong>Number:</strong> {{bill.number}}</li>
+        <li><strong>Committees:</strong> {{bill.committees}}</li>
+        <li><strong></strong> </li>
+        <li><strong>Most Recent Action: {{bill.introduced_date}}</strong> <p>{{bill.latest_major_action}}</p></li>
+      </ul>
+    </div>
   </div>
-</div>
 
-<div class="bill-welcome">
-  <p class="bill-name-2">Midnight Rules Relief Act of 2017</p>
-  <div class="results">
-    <ul style="list-style:none;">
-      <li><strong>Number:</strong> H.R. 2393</li>
-      <li><strong>Committees:</strong> House Agriculture Committee</li>
-      <li><strong>Sponsor:</strong> Darrell Issa</li>
-      <li><strong>Most Recent Action:</strong> Received in the Senate and Read twice and referred to the Committee on Homeland Security and Governmental Affairs</li>
-    </ul>
-  </div>
-</div>
-
-<div class="bill-welcome">
-  <p class="bill-name-2">Midnight Rules Relief Act of 2017</p>
-  <div class="results">
-    <ul style="list-style:none;">
-      <li><strong>Number:</strong> H.R. 2393</li>
-      <li><strong>Committees:</strong> House Agriculture Committee</li>
-      <li><strong>Sponsor:</strong> Darrell Issa</li>
-      <li><strong>Most Recent Action:</strong> Received in the Senate and Read twice and referred to the Committee on Homeland Security and Governmental Affairs</li>
-    </ul>
-  </div>
 </div>
