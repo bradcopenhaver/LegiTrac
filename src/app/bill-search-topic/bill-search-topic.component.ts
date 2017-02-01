@@ -10,12 +10,12 @@ import { LegislatorService } from "../legislator.service";
 })
 export class BillSearchTopicComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
-  searchBillCommittee(selectedCommittee) {
-
+  searchBill(inputTopic) {
+    this.router.navigate(['bills/search', inputTopic]);
   }
 }

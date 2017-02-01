@@ -5,13 +5,13 @@
     <li><strong>Chamber:</strong> {{(legislator)?.roles[0].chamber}}</li>
     <li><strong>Title:</strong> {{(legislator)?.roles[0].title}}</li>
     <li><strong>State:</strong> {{(legislator)?.roles[0].state}}</li>
-    <li><strong>Date of Birth:</strong> <em>{{(legislator)?.date_of_birth}}</em></li>
+    <li *ngIf="legislator"><strong>Date of Birth:</strong> <em>{{legislator.date_of_birth | formatTime}}</em></li>
     <li><strong>Gender:</strong> {{(legislator)?.gender}}</li>
     <li><strong>Years In Office:</strong> {{(legislator)?.roles[0].seniority}}
     <li><strong>Twitter:</strong> <a href="https://twitter.com/{{(legislator)?.twitter_account}}">{{(legislator)?.twitter_account}}</a></li>
     <li><strong>Facebook:</strong> <a href="https://facebook.com/{{(legislator)?.facebook_account}}">{{(legislator)?.facebook_account}}</a></li>
-    <li><strong>Start of current term:</strong> {{(legislator)?.roles[0].start_date}}</li>
-    <li><strong>End of current term:</strong> {{(legislator)?.roles[0].end_date}}</li>
+    <li *ngIf="legislator"><strong>Start of current term:</strong> {{legislator.roles[0].start_date | formatTime}}</li>
+    <li *ngIf="legislator"><strong>End of current term:</strong> {{legislator.roles[0].end_date | formatTime}}</li>
   </ul>
 </div>
 <div class="legislator-detail">
@@ -38,7 +38,7 @@
       <div *ngFor="let vote of voteHistory[0].votes">
         <ul style="list-style:none;">
           <li><strong>Description:</strong> {{vote.description}}</li>
-          <li><strong>Voted:</strong> {{vote.position}} {{vote.question}}. {{vote.date}} {{vote.time}}</li>
+          <li><strong>Voted:</strong> {{vote.position}} {{vote.question}}. {{vote.date | formatTime}} {{vote.time}}</li>
         </ul>
       </div>
     </div>
