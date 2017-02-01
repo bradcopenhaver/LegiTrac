@@ -18,9 +18,9 @@ export class LegislatorResultsComponent implements OnInit {
   ngOnInit() {
     this.route.params.forEach((urlParams) => {
       this.zipInput = urlParams['zipCode'];
+      //Don't forget the async pipe when displaying this data in the template.
+      this.legislatorService.getLegislatorsByZipCode(this.zipInput).subscribe(data => this.legislators = data);
     });
-    //Don't forget the async pipe when displaying this data in the template.
-    this.legislatorService.getLegislatorsByZipCode(this.zipInput).subscribe(data => this.legislators = data);
   }
 
   goToLegislatorDetail(memberId: string) {

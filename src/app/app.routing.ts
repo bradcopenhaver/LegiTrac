@@ -24,7 +24,7 @@ const appRoutes: Routes = [   {
     component: LegislatorResultsComponent
   },
   {
-    path: 'bills/committees/:committee',
+    path: 'bills/search/:query',
     component: BillResultsComponent
   }
 ];
