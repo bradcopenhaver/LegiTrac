@@ -2,7 +2,6 @@
 @import '../../scss/base/mixins';
 
 .legislator-detail {
-  // @include margin(2.5%, null, 2.5%, 2.5%);
   @include size(65%, 100%);
   background: $white;
   border-radius: 5px;

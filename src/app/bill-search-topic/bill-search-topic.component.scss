@@ -2,18 +2,13 @@
 @import '../../scss/base/mixins';
 
 .search-section {
-  position: absolute;
-  top: 260px;
+  @include position(260px, 0, null, 0)
   display: flex;
-  width: 30%;
-  left: 0;
-  right: 0;
   margin: auto;
-  .search-bar {
-  }
+  position: absolute;
+  width: 30%;
   .search-button {
+    @include color($white, #607D8B);
     margin-left: 7px;
-    background-color: #607D8B;
-    color: $white;
   }
 }
