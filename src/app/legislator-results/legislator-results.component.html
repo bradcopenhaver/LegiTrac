@@ -5,12 +5,9 @@
       <li><strong>Party:</strong> {{legislator.party | partyName}}</li>
       <li><strong>Chamber:</strong> {{legislator.chamber | capitalize}}</li>
       <li><strong>State:</strong> {{legislator.state}}</li>
-
       <li *ngIf="legislator.chamber === 'house'"><strong>District:</strong> {{legislator.district}}</li>
     </ul>
-
   </div>
 </div>
-
 <h3>Legislators Data</h3>-->
 <pre><code>{{legislators | json}}</code></pre>

@@ -1,4 +1,6 @@
-# Legislation
+# LegiTrac
+
+Find your representative by entering your zipcode and search congressional bills by selecting a committee.
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.26.
 

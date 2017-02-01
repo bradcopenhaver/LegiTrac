@@ -1,7 +1,6 @@
 @import './scss/base/variables';
 @import './scss/base/mixins';
 
-
 *, p {
   margin: 0;
   padding: 0;
@@ -40,17 +39,6 @@
     }
     &:hover {
       text-decoration: none;
-    }
-  }
-
-  .glyphicon-search {
-    @include margin(24px, 30px, null, null);
-    color: $gray-4;
-    float: right;
-    font-size: 16px;
-    transition-duration: .25s;
-    &:hover {
-      color: $gray-5;
     }
   }
 }
