@@ -1,5 +1,5 @@
 <div class="legislator-detail">
-  <p class="leg-name-1">{{(legislator)?.first_name}} {{(legislator)?.last_name}}</p>
+  <p class="leg-name-1"><i class="glyphicon glyphicon-user"></i>{{(legislator)?.first_name}} {{(legislator)?.last_name}}</p>
   <ul style="list-style:none;">
     <li><strong>Party:</strong> {{(legislator)?.current_party}}</li>
     <li><strong>Chamber:</strong> {{(legislator)?.roles[0].chamber}}</li>
@@ -15,22 +15,22 @@
   </ul>
 </div>
 <div class="legislator-detail">
-  <p class="leg-name-1">Current Term</p>
+  <p class="leg-name-1"><i class="glyphicon glyphicon-flag"></i>Current Term</p>
   <ul style="list-style:none;">
     <li><strong>State:</strong> {{(legislator)?.roles[0].state}}</li>
     <li><strong>Bills Sponsored:</strong> {{(legislator)?.roles[0].bills_sponsored}}</li>
     <li><strong>Bills Cosponsored:</strong> {{(legislator)?.roles[0].bills_cosponsored}}</li>
     <li><strong>Votes along party lines {{(legislator)?.roles[0].votes_with_party_pct}}% of the time.</strong> </li>
     <li><strong>Committees:</strong>
-      <ul>
-        <li *ngFor="let committee of (legislator)?.roles[0].committees">{{committee.name}}</li>
+      <ul style="list-style-type:none;">
+        <li *ngFor="let committee of (legislator)?.roles[0].committees"><i class="glyphicon glyphicon-ok-circle"></i> {{committee.name}}</li>
       </ul>
     </li>
   </ul>
 </div>
 <div class="legislator-detail">
   <div class="leg-name-1" *ngIf="voteHistory">
-    <p (click)="toggleActions()">Vote History</p>
+    <p class="vote-history" (click)="toggleActions()"><i class="glyphicon glyphicon-ok"></i>Vote History</p>
     <p class="total-votes">Total Votes: {{voteHistory[0].total_votes}}</p>
   </div>
   <div [class]="actionShowing">

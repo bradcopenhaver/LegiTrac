@@ -11,9 +11,7 @@
   <p class="banner-text-2-2">Select a committee to learn more about the bills that matter to you.</p>
   <app-bill-search-topic></app-bill-search-topic>
 </div>
-<!-- <code><pre>
-  {{billsArray | json}}
-</pre></code> -->
+
 <div *ngIf="billsArray">
   <div class="bill-welcome" *ngFor="let bill of billsArray[0].bills.slice(0,3)">
     <p class="bill-name-2">Bill {{bill.number}}</p>
@@ -26,5 +24,4 @@
       </ul>
     </div>
   </div>
-
 </div>
