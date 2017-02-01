@@ -13,6 +13,7 @@ export class BillDetailsComponent implements OnInit {
   billId: number;
   bill;
   recent;
+  actionShowing: string = "hidden";
 
   constructor(private route: ActivatedRoute, private legislatorService: LegislatorService) { }
 
@@ -24,9 +25,16 @@ export class BillDetailsComponent implements OnInit {
   }
 
   getBill(billId) {
-    this.legislatorService.getBill(billId).subscribe(data => this.bill = data);
+    this.legislatorService.getBill(billId).subscribe(data => this.bill = data[0]);
   }
   getRecentBills() {
     this.legislatorService.getRecentBills().subscribe(data => this.recent = data)
+  }
+  toggleActions() {
+    if (this.actionShowing === "hidden") {
+      this.actionShowing = "";
+    } else {
+      this.actionShowing = "hidden";
+    }
   }
 }

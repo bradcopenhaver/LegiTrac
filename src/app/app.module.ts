@@ -15,6 +15,7 @@ import { LegislatorDetailsComponent } from './legislator-details/legislator-deta
 import { WelcomeComponent } from './welcome/welcome.component';
 import { CapitalizePipe } from './capitalize.pipe';
 import { PartyNamePipe } from './party-name.pipe';
+import { FormatTimePipe } from './format-time.pipe';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { PartyNamePipe } from './party-name.pipe';
     LegislatorDetailsComponent,
     WelcomeComponent,
     CapitalizePipe,
-    PartyNamePipe
+    PartyNamePipe,
+    FormatTimePipe
   ],
   imports: [
     BrowserModule,
