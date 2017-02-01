@@ -15,6 +15,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { CapitalizePipe } from './capitalize.pipe';
 import { PartyNamePipe } from './party-name.pipe';
 import { FormatTimePipe } from './format-time.pipe';
+import { GetBillIdPipe } from './get-bill-id.pipe';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { FormatTimePipe } from './format-time.pipe';
     WelcomeComponent,
     CapitalizePipe,
     PartyNamePipe,
-    FormatTimePipe
+    FormatTimePipe,
+    GetBillIdPipe
   ],
   imports: [
     BrowserModule,
