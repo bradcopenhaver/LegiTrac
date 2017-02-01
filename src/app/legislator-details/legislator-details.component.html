@@ -27,14 +27,18 @@
       </ul>
     </li>
   </ul>
-  </div>
-  <div class="legislator-detail">
+</div>
+<div class="legislator-detail">
   <div class="leg-name-1" *ngIf="voteHistory">
-    <h3>Vote History</h3>
-    <p>{{voteHistory[0].total_votes}}</p>
+    <p>Vote History</p>
+    <p class="total-votes">Total Votes: {{voteHistory[0].total_votes}}</p>
+  </div>
+  <div *ngIf="voteHistory">
     <div *ngFor="let vote of voteHistory[0].votes">
-      <h5>{{vote.description}}</h5>
-      <p>Voted {{vote.position}} {{vote.question}}. {{vote.date}} {{vote.time}}</p>
+      <ul style="list-style:none;">
+        <li><strong>Description:</strong> {{vote.description}}</li>
+        <li><strong>Voted:</strong> {{vote.position}} {{vote.question}}. {{vote.date}} {{vote.time}}</li>
+      </ul>
     </div>
   </div>
 </div>
