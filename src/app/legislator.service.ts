@@ -36,6 +36,12 @@ export class LegislatorService {
       .catch(LegislatorService.handleError)
   }
 
+  searchBills(query) {
+    return this.http.get(`https://congress.api.sunlightfoundation.com/bills/search?query=${query}`)
+      .map(LegislatorService.extractData)
+      .catch(LegislatorService.handleError)
+  }
+
 
   // HTTP Helper Functions
   proPublicaRequest(url) {
@@ -45,7 +51,9 @@ export class LegislatorService {
   }
 
   static extractData(res: Response) {
-    let body = res.json();
+    console.log(res);
+    let body = JSON.parse(res.text().replace(/&quot;/g,'"'));
+    console.log(body.results[0])
     return body.results || { };
   }
   static handleError (error: Response | any) {

@@ -1,4 +1,4 @@
-<div class="legislator-results" *ngFor="let legislator of legislators">
+<div class="legislator-results" *ngFor="let legislator of legislators" (click)="goToDetail(legislator.bioguide_id)">
   <p class="rep-name">{{legislator.title}} {{legislator.first_name}} {{legislator.last_name}}</p>
   <div class="results">
     <ul style="list-style:none;">
