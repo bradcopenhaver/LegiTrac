@@ -10,7 +10,7 @@ export class LegislatorService {
   headers: Headers = new Headers({'X-API-Key': apiKey});
   options: RequestOptions;
 
-  constructor(private http: Http, private _jsonp: Jsonp) {
+  constructor(private http: Http, private jsonp: Jsonp) {
     this.options = new RequestOptions({headers: this.headers});
   }
 
@@ -36,6 +36,12 @@ export class LegislatorService {
       .catch(LegislatorService.handleError)
   }
 
+  searchBills(query) {
+    return this.jsonp.get(`https://congress.api.sunlightfoundation.com/bills/search?query=${query}&callback=JSONP_CALLBACK`)
+      .map(LegislatorService.extractData)
+      .catch(LegislatorService.handleError)
+  }
+
 
   // HTTP Helper Functions
   proPublicaRequest(url) {
@@ -45,7 +51,12 @@ export class LegislatorService {
   }
 
   static extractData(res: Response) {
-    let body = res.json();
+    let body;
+    try{
+      body = res.json();
+    } catch(e) {
+      body = JSON.parse(res.text().replace(/&quot;/g, "\""));
+    }
     return body.results || { };
   }
   static handleError (error: Response | any) {

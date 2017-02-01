@@ -1,71 +1,17 @@
-<div class="bill-results">
-  <p class="bill-name">Midnight Rules Relief Act of 2017</p>
-  <div class="results">
-    <ul style="list-style:none;">
-      <li><strong>Number:</strong> H.R. 2393</li>
-      <li><strong>Committees:</strong> House Agriculture Committee</li>
-      <li><strong>Sponsor:</strong> Darrell Issa</li>
-      <li><strong>Most Recent Action:</strong><p>Received in the Senate and Read twice and referred to the Committee on Homeland Security and Governmental Affairs</p></li>
-    </ul>
+<div *ngIf="bills">
+  <div class="bill-results" *ngFor="let bill of bills">
+    <p class="bill-name"><span *ngIf="bill.short_title">{{bill.short_title}}</span><span *ngIf="!bill.short_title">{{bill.bill_type.toUpperCase()}} {{bill.number}}</span></p>
+    <div class="results">
+      <ul style="list-style:none;">
+        <li *ngIf="bill.short_title"><strong>Number:</strong> {{bill.bill_type.toUpperCase()}} {{bill.number}}</li>
+        <li *ngIf="!bill.short_title"><strong>Title:</strong> {{bill.official_title}}</li>
+        <li><strong>Congress:</strong> {{bill.congress}}</li>
+        <li><strong>Chamber:</strong> {{bill.chamber}}</li>
+        <li><strong>Sponsor:</strong> {{bill.sponsor.first_name}} {{bill.sponsor.last_name}}</li>
+      </ul>
+    </div>
   </div>
 </div>
 
-<div class="bill-results">
-  <p class="bill-name">Midnight Rules Relief Act of 2017</p>
-  <div class="results">
-    <ul style="list-style:none;">
-      <li><strong>Number:</strong> H.R. 2393</li>
-      <li><strong>Committees:</strong> House Agriculture Committee</li>
-      <li><strong>Sponsor:</strong> Darrell Issa</li>
-      <li><strong>Most Recent Action:</strong><p>Received in the Senate and Read twice and referred to the Committee on Homeland Security and Governmental Affairs</p></li>
-    </ul>
-  </div>
-</div>
-
-<div class="bill-results">
-  <p class="bill-name">Midnight Rules Relief Act of 2017</p>
-  <div class="results">
-    <ul style="list-style:none;">
-      <li><strong>Number:</strong> H.R. 2393</li>
-      <li><strong>Committees:</strong> House Agriculture Committee</li>
-      <li><strong>Sponsor:</strong> Darrell Issa</li>
-      <li><strong>Most Recent Action:</strong><p>Received in the Senate and Read twice and referred to the Committee on Homeland Security and Governmental Affairs</p></li>
-    </ul>
-  </div>
-</div>
-
-<div class="bill-results">
-  <p class="bill-name">Midnight Rules Relief Act of 2017</p>
-  <div class="results">
-    <ul style="list-style:none;">
-      <li><strong>Number:</strong> H.R. 2393</li>
-      <li><strong>Committees:</strong> House Agriculture Committee</li>
-      <li><strong>Sponsor:</strong> Darrell Issa</li>
-      <li><strong>Most Recent Action:</strong><p>Received in the Senate and Read twice and referred to the Committee on Homeland Security and Governmental Affairs</p></li>
-    </ul>
-  </div>
-</div>
-
-<div class="bill-results">
-  <p class="bill-name">Midnight Rules Relief Act of 2017</p>
-  <div class="results">
-    <ul style="list-style:none;">
-      <li><strong>Number:</strong> H.R. 2393</li>
-      <li><strong>Committees:</strong> House Agriculture Committee</li>
-      <li><strong>Sponsor:</strong> Darrell Issa</li>
-      <li><strong>Most Recent Action:</strong><p>Received in the Senate and Read twice and referred to the Committee on Homeland Security and Governmental Affairs</p></li>
-    </ul>
-  </div>
-</div>
-
-<div class="bill-results">
-  <p class="bill-name">Midnight Rules Relief Act of 2017</p>
-  <div class="results">
-    <ul style="list-style:none;">
-      <li><strong>Number:</strong> H.R. 2393</li>
-      <li><strong>Committees:</strong> House Agriculture Committee</li>
-      <li><strong>Sponsor:</strong> Darrell Issa</li>
-      <li><strong>Most Recent Action:</strong><p>Received in the Senate and Read twice and referred to the Committee on Homeland Security and Governmental Affairs</p></li>
-    </ul>
-  </div>
-</div>
+<h3>Search Results</h3>
+<pre><code>{{bills | json}}</code></pre>

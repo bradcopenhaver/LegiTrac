@@ -30,15 +30,17 @@
 </div>
 <div class="legislator-detail">
   <div class="leg-name-1" *ngIf="voteHistory">
-    <p class="vote-history"><i class="glyphicon glyphicon-ok"></i>Vote History</p>
+    <p class="vote-history" (click)="toggleActions()"><i class="glyphicon glyphicon-ok"></i>Vote History</p>
     <p class="total-votes">Total Votes: {{voteHistory[0].total_votes}}</p>
   </div>
-  <div *ngIf="voteHistory">
-    <div *ngFor="let vote of voteHistory[0].votes">
-      <ul style="list-style:none;">
-        <li><strong>Description:</strong> {{vote.description}}</li>
-        <li><strong>Voted:</strong> {{vote.position}} {{vote.question}}. {{vote.date}} {{vote.time}}</li>
-      </ul>
+  <div [class]="actionShowing">
+    <div *ngIf="voteHistory">
+      <div *ngFor="let vote of voteHistory[0].votes">
+        <ul style="list-style:none;">
+          <li><strong>Description:</strong> {{vote.description}}</li>
+          <li><strong>Voted:</strong> {{vote.position}} {{vote.question}}. {{vote.date}} {{vote.time}}</li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>

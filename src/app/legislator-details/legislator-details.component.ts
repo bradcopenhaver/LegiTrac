@@ -12,6 +12,7 @@ export class LegislatorDetailsComponent implements OnInit {
   legislatorId: string;
   legislator: any;
   voteHistory: any;
+  actionShowing: string = "hidden";
 
   constructor(private route: ActivatedRoute, private legislatorService: LegislatorService) { }
 
@@ -24,12 +25,22 @@ export class LegislatorDetailsComponent implements OnInit {
   }
 
   getVoteHistory(legislatorId) {
-    this.legislatorService.getVoteHistory(legislatorId).subscribe(data => this.voteHistory = data);
+    this.legislatorService.getVoteHistory(legislatorId).subscribe(data => {
+      this.voteHistory = data;
+    });
   }
 
   getLegislator(legislatorId) {
     this.legislatorService.getLegislator(legislatorId).subscribe(data => this.legislator = data[0]);
   }
+  toggleActions() {
+    if (this.actionShowing === "hidden") {
+      this.actionShowing = "";
+    } else {
+      this.actionShowing = "hidden";
+    }
+  }
+
 
 
 }

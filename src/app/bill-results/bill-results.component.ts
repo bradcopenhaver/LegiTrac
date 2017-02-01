@@ -9,10 +9,18 @@ import { LegislatorService } from "../legislator.service";
   providers: [LegislatorService]
 })
 export class BillResultsComponent implements OnInit {
+  query: string;
+  bills: Object;
+  
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private legislatorService: LegislatorService) { }
 
   ngOnInit() {
+    this.route.params.forEach(params => {
+      this.query = params['query'];
+      console.log(this.query);
+      this.legislatorService.searchBills(this.query).subscribe(data => this.bills = data);
+    });
   }
 
 }
