@@ -11,9 +11,9 @@ import { LegislatorService } from "../legislator.service";
 export class BillResultsComponent implements OnInit {
   query: string;
   bills: Object;
-  
 
-  constructor(private route: ActivatedRoute, private legislatorService: LegislatorService) { }
+
+  constructor(private route: ActivatedRoute, private router: Router, private legislatorService: LegislatorService) { }
 
   ngOnInit() {
     this.route.params.forEach(params => {
@@ -21,6 +21,9 @@ export class BillResultsComponent implements OnInit {
       console.log(this.query);
       this.legislatorService.searchBills(this.query).subscribe(data => this.bills = data);
     });
+  }
+  goToDetailPage(billId) {
+    this.router.navigate(['bills', billId])
   }
 
 }

@@ -1,6 +1,6 @@
 <div *ngIf="bills">
   <div class="bill-results" *ngFor="let bill of bills">
-    <p class="bill-name"><span *ngIf="bill.short_title">{{bill.short_title}}</span><span *ngIf="!bill.short_title">{{bill.bill_type.toUpperCase()}} {{bill.number}}</span></p>
+    <p class="bill-name"><span *ngIf="bill.short_title" (click)="goToDetailPage(bill.bill_id)">{{bill.short_title}}</span><span *ngIf="!bill.short_title">{{bill.bill_type.toUpperCase()}} {{bill.number}}</span></p>
     <div class="results">
       <ul style="list-style:none;">
         <li *ngIf="bill.short_title"><strong>Number:</strong> {{bill.bill_type.toUpperCase()}} {{bill.number}}</li>
