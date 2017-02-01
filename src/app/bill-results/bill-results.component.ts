@@ -11,6 +11,7 @@ import { LegislatorService } from "../legislator.service";
 export class BillResultsComponent implements OnInit {
   query: string;
   bills: Object;
+  
 
   constructor(private route: ActivatedRoute, private legislatorService: LegislatorService) { }
 
