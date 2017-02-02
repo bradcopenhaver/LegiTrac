@@ -1,5 +1,5 @@
 <div class="legislator-detail">
-  <p class="leg-name-1"><i class="glyphicon glyphicon-user"></i>{{(legislator)?.first_name}} {{(legislator)?.last_name}}</p>
+  <p [class]="'leg-name-1 ' + getParty(legislator)"><i class="glyphicon glyphicon-user"></i>{{(legislator)?.first_name}} {{(legislator)?.last_name}}</p>
   <ul style="list-style:none;">
     <li><strong>Party:</strong> {{(legislator)?.current_party}}</li>
     <li><strong>Chamber:</strong> {{(legislator)?.roles[0].chamber}}</li>
@@ -15,7 +15,7 @@
   </ul>
 </div>
 <div class="legislator-detail">
-  <p class="leg-name-1"><i class="glyphicon glyphicon-flag"></i>Current Term</p>
+  <p [class]="'leg-name-1 ' + getParty(legislator)"><i class="glyphicon glyphicon-flag"></i>Current Term</p>
   <ul style="list-style:none;">
     <li><strong>State:</strong> {{(legislator)?.roles[0].state}}</li>
     <li><strong>Bills Sponsored:</strong> {{(legislator)?.roles[0].bills_sponsored}}</li>
@@ -29,26 +29,28 @@
   </ul>
 </div>
 <div class="legislator-detail">
-  <div class="leg-name-1" *ngIf="voteHistory">
+  <div [class]="'leg-name-1 ' + getParty(legislator)" *ngIf="voteHistory">
     <p class="vote-history" (click)="toggleActions()"><i class="glyphicon glyphicon-ok"></i>Vote History<i class="glyphicon glyphicon-triangle-bottom show-more"></i></p>
   </div>
   <div [class]="actionShowing">
-    <div class="filters">
-      <label>Position:</label>
-      <select #yesNoFilter (change)="updateYNFilter($event.target.value)">
-        <option value="">Select...</option>
-        <option value="Yes">Yes votes</option>
-        <option value="No">No votes</option>
-      </select>
-      <label>Only show votes on bills:</label>
-      <select #showBills (change)="updateShowBillsFilter($event.target.value)">
-        <option value="">Select...</option>
-        <option value="Bills">Yes</option>
-        <option value="noBills">No</option>
-      </select>
-    </div>
+    <h4>Vote filters:</h4>
+    <label>Position:</label>
+    <select #yesNoFilter (change)="updateYNFilter($event.target.value)">
+      <option value="">Select...</option>
+      <option value="Yes">Yes votes</option>
+      <option value="No">No votes</option>
+    </select>
+    <label>Only show votes on bills:</label>
+    <select #showBills (change)="updateShowBillsFilter($event.target.value)">
+      <option value="">Select...</option>
+      <option value="Bills">Yes</option>
+      <option value="noBills">No</option>
+    </select>
+    <label>Filter by keyword:</label>
+    <input #billKeyword>
+    <button (click)="updateKeywordFilter(billKeyword.value)">Apply</button>
     <div *ngIf="voteHistory">
-      <div *ngFor="let vote of voteHistory[0].votes | filterVotePosition:filterYN | filterBills:filterB">
+      <div *ngFor="let vote of voteHistory[0].votes | filterVotePosition:filterYN | filterBills:filterB | keyword:filterKeyword">
         <ul style="list-style:none;">
           <li><strong>Description:</strong> {{vote.description}}</li>
           <li><strong>Voted:</strong> {{vote.position}} {{vote.question}}. {{vote.date | formatTime}} {{vote.time}}</li>

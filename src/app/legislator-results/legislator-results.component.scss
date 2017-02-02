@@ -3,7 +3,7 @@
 
 .legislator-results {
   @include margin(2.5%, auto, 2.5%, auto);
-  @include size(60%, 100%)
+  @include size(60%, 100%);
   background: $white;
   border-radius: 5px;
   display: block;
@@ -27,5 +27,8 @@
   }
   .rep {
     background-color: #B71C1C;
+  }
+  .dem {
+    background-color: #0D47A1;
   }
 }

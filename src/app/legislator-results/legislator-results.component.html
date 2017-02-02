@@ -1,6 +1,6 @@
 <div class="legislator-results" *ngFor="let legislator of legislators">
-  <div>
-    <p class="rep-name" (click)="goToLegislatorDetail(legislator.bioguide_id)"><i class="glyphicon glyphicon-user"></i>{{legislator.title}} {{legislator.first_name}} {{legislator.last_name}}<i class="glyphicon glyphicon-chevron-right view-more"></i></p>
+  <div class="">
+    <p [class]="'rep-name clicky ' + getParty(legislator.party)" (click)="goToLegislatorDetail(legislator.bioguide_id)"><i class="glyphicon glyphicon-user"></i>{{legislator.title}} {{legislator.first_name}} {{legislator.last_name}}<i class="glyphicon glyphicon-chevron-right view-more"></i></p>
   </div>
   <div class="results">
     <ul style="list-style:none;">

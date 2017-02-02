@@ -1,10 +1,10 @@
 <div class="header">
   <div class="logo">
-    <img class="new-logo" src="img/logo.png">
+    <img (click)="goHome()" class="new-logo clicky" src="img/logo.png">
     <a href=""><span class="blue">Legi</span><span class="red">Trac</span></a>
   </div>
   <ul class="header-menu">
-    <li><a href="#">About</a></li>
+    <li><a routerLink="about">About</a></li>
   </ul>
 </div>
 

@@ -15,6 +15,7 @@ export class LegislatorDetailsComponent implements OnInit {
   actionShowing: string = "hidden";
   filterYN: string = "";
   filterB: string = "";
+  filterKeyword: string = "";
 
   constructor(private route: ActivatedRoute, private legislatorService: LegislatorService) { }
 
@@ -56,4 +57,12 @@ export class LegislatorDetailsComponent implements OnInit {
     return ("bills/" + splitUri[7].slice(0, -5) + "-" + splitUri[5]);
   }
 
+  updateKeywordFilter(input) {
+    this.filterKeyword = input;
+  }
+
+  getParty(legislator) {
+    if(!legislator) return "";
+    return legislator.current_party === "R" ? "rep" : legislator.current_party  === "D" ? 'dem' : "";
+  }
 }

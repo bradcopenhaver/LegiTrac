@@ -38,4 +38,13 @@ export class BillDetailsComponent implements OnInit {
       this.actionShowing = "hidden";
     }
   }
+  legDetailLink(uri: string){
+    let output;
+    try{
+      output = "legislators/" + uri.slice(-12, -5);
+    } catch(e) {
+      output = "";
+    }
+    return output;
+  }
 }

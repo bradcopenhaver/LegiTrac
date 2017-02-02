@@ -16,4 +16,8 @@ export class WelcomeComponent implements OnInit {
     this.legislatorService.getRecentBills().subscribe(billsReturned => this.billsArray = billsReturned);
   }
 
+  billDetailLink(billUri: string) {
+    var splitUri = billUri.split("/");
+    return ("bills/" + splitUri[7].slice(0, -5) + "-" + splitUri[5]);
+  }
 }
