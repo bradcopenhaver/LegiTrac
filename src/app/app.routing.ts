@@ -8,6 +8,7 @@ import { LegislatorResultsComponent } from './legislator-results/legislator-resu
 import { BillDetailsComponent } from './bill-details/bill-details.component';
 import { LegislatorDetailsComponent } from './legislator-details/legislator-details.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { AboutComponent } from './about/about.component';
 
 const appRoutes: Routes = [   {
     path: '',
@@ -26,6 +27,10 @@ const appRoutes: Routes = [   {
   {
     path: 'bills/search/:query',
     component: BillResultsComponent
+  },
+  {
+    path: 'about',
+    component: AboutComponent
   }
 ];
 
