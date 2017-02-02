@@ -3,7 +3,7 @@
 
 .bill-results {
   @include margin(2.5%, auto, 2.5%, auto);
-  @include size(65%, 195px);
+  @include size(60%, 195px);
   background: $white;
   border-radius: 5px;
   display: block;
