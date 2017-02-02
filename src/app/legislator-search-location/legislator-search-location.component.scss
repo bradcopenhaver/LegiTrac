@@ -10,5 +10,8 @@
   .search-button {
     @include color($white, #607D8B);
     margin-left: 7px;
+    &:hover {
+      @include color($white, #546E7A);
+    }
   }
 }
