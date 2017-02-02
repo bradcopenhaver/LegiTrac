@@ -32,9 +32,14 @@
     color: $blue-gray-4;
   }
   label {
-    @include margin(10px, null, null, 15px);
+    @include margin(5px, null, null, 15px);
     color: $blue-gray-4;
     font-size: 16px;
+  }
+  h4 {
+    @include margin(10px, 15px, null, 15px);
+    color: $blue-gray-4;
+    font-size: 15px;
   }
   .filters {
     margin-right: auto;
@@ -45,5 +50,9 @@
   }
   .dem {
     background-color: #0D47A1;
+  }
+  .apply {
+    width: 50px;
+    height: 24px;
   }
 }

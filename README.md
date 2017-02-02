@@ -1,33 +1,61 @@
 # LegiTrac
 
-Find your representative by entering your zipcode and search congressional bills by selecting a committee.
+LegiTrac was created to provide easy access to information on legislation and legislators in the US Congress. It is meant to be a tool for citizens to use to be aware of how their representatives in Congress are voting on issues that concern them. LegiTrac is kept up to date with information provided by:
+* [ProPublica](https://www.propublica.org/datastore/api/propublica-congress-api)
+* [The Sunlight Foundation](https://sunlightfoundation.com/api/)
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.26.
 
+## Access online
+
+This website is hosted at http://legitrac.com.
+
+## Setup and Install
+
+#### Prerequisites
+
+You will need the following things properly installed on your computer.
+
+* [Git](https://git-scm.com/)
+* [Node.js](https://nodejs.org/) (with NPM)
+* [Bower](https://bower.io/)
+* [Angular2 CLI](https://cli.angular.io/)
+
+#### Installation
+
+Clone this repository and navigate to the repository directory in the command line. Run the following commands in order:
+
+    > npm install
+    > bower install
+
 ## Development server
+
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Known Bugs
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
+No input fields are required. If new questions or answers are submitted with empty fields they will not save or display properly.
 
-## Build
+## Possible future version features
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+Search/filter questions.
 
-## Running unit tests
+## Support and contact details
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+If you have questions or comments, contact the author at bradcopenhaver@gmail.com
 
-## Running end-to-end tests
+## Technologies Used
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+* Angular2
+* Javascript
+* jQuery
+* Node.js
+* Bower
+* html/css
+* Bootstrap
 
-## Deploying to GitHub Pages
+### License
 
-Run `ng github-pages:deploy` to deploy to GitHub Pages.
+This project is licensed under the MIT license.
 
-## Further help
-
-To get more help on the `angular-cli` use `ng help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Copyright (c) 2017 **Brad Copenhaver, Claire Sial, Kenny Black, Margie Nevarez**

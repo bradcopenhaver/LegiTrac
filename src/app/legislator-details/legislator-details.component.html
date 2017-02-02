@@ -30,7 +30,7 @@
 </div>
 <div class="legislator-detail">
   <div [class]="'leg-name-1 ' + getParty(legislator)" *ngIf="voteHistory">
-    <p class="vote-history" (click)="toggleActions()"><i class="glyphicon glyphicon-ok"></i>Vote History<i class="glyphicon glyphicon-triangle-bottom show-more"></i></p>
+    <p class="vote-history clicky" (click)="toggleActions()"><i class="glyphicon glyphicon-ok"></i>Vote History<i class="glyphicon glyphicon-triangle-bottom show-more"></i></p>
   </div>
   <div [class]="actionShowing">
     <h4>Vote filters:</h4>
@@ -48,7 +48,7 @@
     </select>
     <label>Filter by keyword:</label>
     <input #billKeyword>
-    <button (click)="updateKeywordFilter(billKeyword.value)">Apply</button>
+    <button class="apply" (click)="updateKeywordFilter(billKeyword.value)">Apply</button>
     <div *ngIf="voteHistory">
       <div *ngFor="let vote of voteHistory[0].votes | filterVotePosition:filterYN | filterBills:filterB | keyword:filterKeyword">
         <ul style="list-style:none;">
