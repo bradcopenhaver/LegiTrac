@@ -27,4 +27,8 @@ export class LegislatorResultsComponent implements OnInit {
     this.router.navigate(['legislators', memberId]);
   }
 
+  getParty(party) {
+    return party === "R" ? "rep" : party === "D" ? 'dem' : "";
+  }
+
 }

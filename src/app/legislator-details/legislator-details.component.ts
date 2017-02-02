@@ -61,4 +61,8 @@ export class LegislatorDetailsComponent implements OnInit {
     this.filterKeyword = input;
   }
 
+  getParty(legislator) {
+    if(!legislator) return "";
+    return legislator.current_party === "R" ? "rep" : legislator.current_party  === "D" ? 'dem' : "";
+  }
 }
