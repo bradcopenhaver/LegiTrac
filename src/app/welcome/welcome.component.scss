@@ -86,7 +86,7 @@
 
   .bill-welcome {
     @include margin(null, auto, 2.5%, auto);
-    @include padding(null, null, 7px, null);
+    @include padding(null, null, 10px, null);
     @include size(60%, 100%);
     background: $white;
     border-radius: 5px;
@@ -96,9 +96,12 @@
       @include color($white, #37474F);
       @include font($roboto, 19px, 400);
       @include padding(13px, 17px, 13px, 19px);
-      margin-bottom: 13px;
+      margin-bottom: 12px;
       border-top-right-radius: 5px;
       border-top-left-radius: 5px;
+      // &:nth-child(2n) {
+      //   @include color($white, #B71C1C);
+      // }
     }
     li {
       @include margin(null, 25px, 10px, 15px);

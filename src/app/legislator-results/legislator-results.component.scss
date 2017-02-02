@@ -7,7 +7,7 @@
   background: $white;
   border-radius: 5px;
   display: block;
-  padding-bottom: 5px;
+  padding-bottom: 10px;
   .rep-name {
     @include color($white, #37474F);
     @include font($roboto, 19px, 400);
