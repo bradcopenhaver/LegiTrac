@@ -7,10 +7,10 @@
         <li *ngIf="!bill.short_title"><strong>Title:</strong> {{bill.official_title}}</li>
         <li><strong>Congress:</strong> {{bill.congress}}</li>
         <li><strong>Chamber:</strong> {{bill.chamber | capitalize}}</li>
-        <li><strong>Sponsor:</strong> {{bill.sponsor.first_name}} {{bill.sponsor.last_name}}</li>
+        <li><strong>Sponsor:</strong> <a routerLink="../../../legislators/{{bill.sponsor_id}}">{{bill.sponsor.first_name}} {{bill.sponsor.last_name}}</a></li>
       </ul>
     </div>
   </div>
 </div>
-<!-- <h3>Search Results</h3>
-<pre><code>{{bills | json}}</code></pre> -->
+<h3>Search Results</h3>
+<pre><code>{{bills | json}}</code></pre>

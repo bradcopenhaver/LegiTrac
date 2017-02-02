@@ -39,6 +39,12 @@ export class BillDetailsComponent implements OnInit {
     }
   }
   legDetailLink(uri: string){
-    return ("legislators/" + uri.slice(-12, -5));
+    let output;
+    try{
+      output = "legislators/" + uri.slice(-12, -5);
+    } catch(e) {
+      output = "";
+    }
+    return output;
   }
 }
