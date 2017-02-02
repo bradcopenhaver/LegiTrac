@@ -33,19 +33,20 @@
     <p class="vote-history" (click)="toggleActions()"><i class="glyphicon glyphicon-ok"></i>Vote History<i class="glyphicon glyphicon-triangle-bottom show-more"></i></p>
   </div>
   <div [class]="actionShowing">
-    <h4>Vote filters:</h4>
-    <label>Position:</label>
-    <select #yesNoFilter (change)="updateYNFilter($event.target.value)">
-      <option value="">Select...</option>
-      <option value="Yes">Yes votes</option>
-      <option value="No">No votes</option>
-    </select>
-    <label>Only show votes on bills:</label>
-    <select #showBills (change)="updateShowBillsFilter($event.target.value)">
-      <option value="">Select...</option>
-      <option value="Bills">Yes</option>
-      <option value="noBills">No</option>
-    </select>
+    <div class="filters">
+      <label>Position:</label>
+      <select #yesNoFilter (change)="updateYNFilter($event.target.value)">
+        <option value="">Select...</option>
+        <option value="Yes">Yes votes</option>
+        <option value="No">No votes</option>
+      </select>
+      <label>Only show votes on bills:</label>
+      <select #showBills (change)="updateShowBillsFilter($event.target.value)">
+        <option value="">Select...</option>
+        <option value="Bills">Yes</option>
+        <option value="noBills">No</option>
+      </select>
+    </div>
     <div *ngIf="voteHistory">
       <div *ngFor="let vote of voteHistory[0].votes | filterVotePosition:filterYN | filterBills:filterB">
         <ul style="list-style:none;">
@@ -57,5 +58,4 @@
     </div>
   </div>
 </div>
-<pre><code>{{voteHistory | json}}</code></pre>
-
+<!-- <pre><code>{{voteHistory | json}}</code></pre> -->

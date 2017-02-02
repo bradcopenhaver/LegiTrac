@@ -3,18 +3,17 @@
 
 .legislator-results {
   @include margin(2.5%, auto, 2.5%, auto);
-  @include size(65%, 100%)
+  @include size(60%, 100%)
   background: $white;
   border-radius: 5px;
   display: block;
-  min-height: 195px;
+  padding-bottom: 5px;
   .rep-name {
     @include color($white, #37474F);
     @include font($roboto, 19px, 400);
     @include padding(13px, 17px, 13px, 19px);
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
-    // margin-bottom: 15px;
   }
   .view-more {
     float: right;

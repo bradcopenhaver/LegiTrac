@@ -10,6 +10,9 @@
       @include size(100%, 395px)
       object-fit: cover;
     }
+    .banner-2 {
+      margin-bottom: 2.5%;
+    }
     .banner-text-1 {
       @include color($white, $blue-gray-4);
       @include font($roboto, 32px, 400);
@@ -82,29 +85,30 @@
   }
 
   .bill-welcome {
-    @include margin(2.5%, null, null, 2.5%);
+    @include margin(null, auto, 2.5%, auto);
     @include padding(null, null, 7px, null);
-    @include size(65%, 100%);
+    @include size(60%, 100%);
     background: $white;
     border-radius: 5px;
-    float: left;
+    clear: both;
+    display: block;
     .bill-name-2 {
       @include color($white, #37474F);
       @include font($roboto, 19px, 300);
-      @include padding(13px, 32px, 13px, 19px);
+      @include padding(13px, 17px, 13px, 19px);
       margin-bottom: 13px;
       border-top-right-radius: 5px;
       border-top-left-radius: 5px;
     }
     li {
-      @include margin(null, 15px, 10px, 15px);
-      color: $blue-gray-4
+      @include margin(null, 25px, 10px, 15px);
+      color: $blue-gray-4;
     }
-  }
-
-  .trending-heading {
-    @include font($roboto, 40px, 500);
-    // text-align: center;
-    color: $blue-4;
+    i {
+      margin-right: 10px;
+    }
+    .view-more {
+      float: right;
+    }
   }
 }
