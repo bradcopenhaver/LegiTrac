@@ -13,18 +13,20 @@ export class BillDetailsComponent implements OnInit {
   bill;
   recent;
   actionShowing: string = "hidden";
+  routeParams = [];
 
   constructor(private route: ActivatedRoute, private legislatorService: LegislatorService) { }
 
   ngOnInit() {
     this.route.params.forEach(params => {
-      this.bill = this.getBill(params['billId']);
+      var routeParams = params['billId'].split("-")
+      this.bill = this.getBill(routeParams[0], routeParams[1]);
       this.getRecentBills()
     });
   }
 
-  getBill(billId) {
-    this.legislatorService.getBill(billId).subscribe(data => this.bill = data[0]);
+  getBill(billId, congress) {
+    this.legislatorService.getBill(billId, congress).subscribe(data => this.bill = data[0]);
   }
   getRecentBills() {
     this.legislatorService.getRecentBills().subscribe(data => this.recent = data)
