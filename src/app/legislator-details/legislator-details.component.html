@@ -31,7 +31,7 @@
 <div class="legislator-detail">
   <div class="leg-name-1" *ngIf="voteHistory">
     <p class="vote-history" (click)="toggleActions()"><i class="glyphicon glyphicon-ok"></i>Vote History</p>
-    <p class="total-votes">Total Votes: {{voteHistory[0].total_votes}}</p>
+    <p class="total-votes">Most Recent {{voteHistory[0].total_votes}} Votes</p>
   </div>
   <div [class]="actionShowing">
     <div *ngIf="voteHistory">
@@ -44,3 +44,4 @@
     </div>
   </div>
 </div>
+<pre><code>{{voteHistory | json}}</code></pre>
