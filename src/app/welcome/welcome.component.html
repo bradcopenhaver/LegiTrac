@@ -13,8 +13,8 @@
 </div>
 
 <div *ngIf="billsArray">
-  <div class="bill-welcome" *ngFor="let bill of billsArray[0].bills.slice(0,3)">
-    <p class="bill-name-2"><i class="fa fa-line-chart" aria-hidden="true"></i>Bill {{bill.number}}<i class="glyphicon glyphicon-chevron-right view-more"></i></p>
+  <div class="bill-welcome" *ngFor="let bill of billsArray[0].bills.slice(0,3)"><a routerLink="../../{{billDetailLink(bill.bill_uri)}}">
+    <p class="bill-name-2 clicky"><i class="fa fa-line-chart" aria-hidden="true" ></i>Bill {{bill.number}}<i class="glyphicon glyphicon-chevron-right view-more"></i></p></a>
     <div class="results">
       <ul style="list-style:none;">
         <li><strong>Title:</strong> {{bill.title}}</li>

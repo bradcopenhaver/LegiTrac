@@ -1,24 +1,24 @@
-<div class="bill-detail">
-  <p class="bill-name-1"><i class="glyphicon glyphicon-list-alt"></i>{{bill?.bill}} {{(bill)?.title}}</p>
+<div *ngIf="bill" class="bill-detail">
+  <p class="bill-name-1"><i class="glyphicon glyphicon-list-alt"></i>{{bill.bill}} {{(bill).title}}</p>
   <ul style="list-style:none;">
-    <li><strong>Sponsor:</strong> {{(bill)?.sponsor}} with {{(bill)?.cosponsors}} cosponsors</li>
+    <li><strong>Sponsor:</strong> <a  routerLink="../../{{legDetailLink(bill.sponsor_uri)}}">{{(bill).sponsor}}</a> with {{(bill).cosponsors}} cosponsors</li>
     <li *ngIf="bill"><strong>Introduced on:</strong> {{bill.introduced_date | formatTime}}</li>
-    <li><strong>Committees:</strong> {{(bill)?.committees}}</li>
-    <li *ngIf="bill"><strong>Last major action:</strong> {{(bill)?.latest_major_action}} On {{bill.latest_major_action_date | formatTime}}</li>
+    <li><strong>Committees:</strong> {{(bill).committees}}</li>
+    <li *ngIf="bill"><strong>Last major action:</strong> {{(bill).latest_major_action}} On {{bill.latest_major_action_date | formatTime}}</li>
     <li *ngIf="bill"><strong>Passed in House: </strong> {{bill.house_passage_vote | formatTime}}</li>
     <li *ngIf="bill"><strong>Passed in Senate:</strong> {{bill.senate_passage_vote | formatTime}}</li>
-    <li *ngIf="bill?.gpo_pdf_uri"><strong>PDF of bill:</strong><a href="{{bill?.gpo_pdf_uri}}"> View PDF</a></li>
+    <li *ngIf="bill.gpo_pdf_uri"><strong>PDF of bill:</strong><a href="{{bill.gpo_pdf_uri}}"> View PDF</a></li>
   </ul>
 </div>
-<div class="bill-detail">
-  <p class="bill-name-1" (click)="toggleActions()"><i class="glyphicon glyphicon-exclamation-sign"></i>Actions Taken: ({{(bill)?.actions.length}})<i class="glyphicon glyphicon-triangle-bottom show-more"></i></p>
+<div *ngIf="bill" class="bill-detail">
+  <p class="bill-name-1" (click)="toggleActions()"><i class="glyphicon glyphicon-exclamation-sign"></i>Actions Taken: ({{(bill).actions.length}})<i class="glyphicon glyphicon-triangle-bottom show-more"></i></p>
   <div [class]="actionShowing">
-    <ul style="list-style:none;" *ngFor="let action of bill?.actions">
+    <ul style="list-style:none;" *ngFor="let action of bill.actions">
       <li><strong>Action:</strong> {{action.description}}</li>
       <li><strong>Date:</strong> {{action.datetime | formatTime}}</li>
     </ul>
   </div>
 </div>
 
-<!--<h3>Bill Data</h3>-->
-<!--<pre><code>{{bill | json}}</code></pre>-->
+<!-- <h3>Bill Data</h3>
+<pre><code>{{bill | json}}</code></pre> -->

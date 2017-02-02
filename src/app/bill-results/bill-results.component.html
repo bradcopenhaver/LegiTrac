@@ -6,7 +6,7 @@
         <li *ngIf="bill.short_title"><strong>Number:</strong> {{bill.bill_type.toUpperCase()}} {{bill.number}}</li>
         <li *ngIf="!bill.short_title"><strong>Title:</strong> {{bill.official_title}}</li>
         <li><strong>Congress:</strong> {{bill.congress}}</li>
-        <li><strong>Chamber:</strong> {{bill.chamber}}</li>
+        <li><strong>Chamber:</strong> {{bill.chamber | capitalize}}</li>
         <li><strong>Sponsor:</strong> {{bill.sponsor.first_name}} {{bill.sponsor.last_name}}</li>
       </ul>
     </div>
