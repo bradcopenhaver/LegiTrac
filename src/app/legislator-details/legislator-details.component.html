@@ -46,8 +46,11 @@
       <option value="Bills">Yes</option>
       <option value="noBills">No</option>
     </select>
+    <label>Filter by keyword:</label>
+    <input #billKeyword>
+    <button (click)="updateKeywordFilter(billKeyword.value)">Apply</button>
     <div *ngIf="voteHistory">
-      <div *ngFor="let vote of voteHistory[0].votes | filterVotePosition:filterYN | filterBills:filterB">
+      <div *ngFor="let vote of voteHistory[0].votes | filterVotePosition:filterYN | filterBills:filterB | keyword:filterKeyword">
         <ul style="list-style:none;">
           <li><strong>Description:</strong> {{vote.description}}</li>
           <li><strong>Voted:</strong> {{vote.position}} {{vote.question}}. {{vote.date | formatTime}} {{vote.time}}</li>
