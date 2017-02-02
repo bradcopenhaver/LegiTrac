@@ -33,14 +33,29 @@
     <p class="vote-history" (click)="toggleActions()"><i class="glyphicon glyphicon-ok"></i>Vote History<i class="glyphicon glyphicon-triangle-bottom show-more"></i></p>
   </div>
   <div [class]="actionShowing">
+    <h4>Vote filters:</h4>
+    <label>Position:</label>
+    <select #yesNoFilter (change)="updateYNFilter($event.target.value)">
+      <option value="">Select...</option>
+      <option value="Yes">Yes votes</option>
+      <option value="No">No votes</option>
+    </select>
+    <label>Only show votes on bills:</label>
+    <select #showBills (change)="updateShowBillsFilter($event.target.value)">
+      <option value="">Select...</option>
+      <option value="Bills">Yes</option>
+      <option value="noBills">No</option>
+    </select>
     <div *ngIf="voteHistory">
-      <div *ngFor="let vote of voteHistory[0].votes">
+      <div *ngFor="let vote of voteHistory[0].votes | filterVotePosition:filterYN | filterBills:filterB">
         <ul style="list-style:none;">
           <li><strong>Description:</strong> {{vote.description}}</li>
           <li><strong>Voted:</strong> {{vote.position}} {{vote.question}}. {{vote.date | formatTime}} {{vote.time}}</li>
+          <li *ngIf="vote.bill.number"><a routerLink="../../{{billDetailLink(vote.bill.bill_uri)}}">Bill Details</a>
         </ul>
       </div>
     </div>
   </div>
 </div>
-<!-- <pre><code>{{legislator | json}}</code></pre> -->
+<pre><code>{{voteHistory | json}}</code></pre>
+
