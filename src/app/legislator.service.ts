@@ -31,7 +31,7 @@ export class LegislatorService {
   }
 
   getLegislatorsByZipCode(zipCode) {
-    return this.http.get(`https://congress.api.sunlightfoundation.com/legislators/locate?zip=${zipCode}`)
+    return this.jsonp.get(`https://congress.api.sunlightfoundation.com/legislators/locate?zip=${zipCode}&callback=JSONP_CALLBACK`)
       .map(LegislatorService.extractData)
       .catch(LegislatorService.handleError)
   }

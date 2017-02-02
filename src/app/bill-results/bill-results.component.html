@@ -1,6 +1,6 @@
 <div *ngIf="bills">
   <div class="bill-results" *ngFor="let bill of bills">
-    <p class="bill-name" (click)="goToDetailPage(bill.bill_id)"><span *ngIf="bill.short_title"><i class="glyphicon glyphicon-list-alt"></i>{{bill.short_title}}</span><span *ngIf="!bill.short_title"><i class="glyphicon glyphicon-list-alt"></i>{{bill.bill_type.toUpperCase()}} {{bill.number}}</span><i class="glyphicon glyphicon-chevron-right view-more"></i></p>
+    <p class="bill-name clicky" (click)="goToDetailPage(bill.bill_id)"><span *ngIf="bill.short_title"><i class="glyphicon glyphicon-list-alt"></i>{{bill.short_title}}</span><span *ngIf="!bill.short_title"><i class="glyphicon glyphicon-list-alt"></i>{{bill.bill_type.toUpperCase()}} {{bill.number}}</span><i class="glyphicon glyphicon-chevron-right view-more"></i></p>
     <div class="results">
       <ul style="list-style:none;">
         <li *ngIf="bill.short_title"><strong>Number:</strong> {{bill.bill_type.toUpperCase()}} {{bill.number}}</li>
