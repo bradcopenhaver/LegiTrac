@@ -1,23 +1,20 @@
 @import '../../scss/base/variables';
 @import '../../scss/base/mixins';
 
-.map {
-  display: block;
-  margin: auto;
-}
 .legislator-results {
-  @include margin(2.5%, null, 2.5%, 2.5%);
-  @include size(30%, 100%)
+  @include margin(2.5%, auto, 2.5%, auto);
+  @include size(65%, 100%)
   background: $white;
   border-radius: 5px;
-  float: left;
-  min-height: 200px;
+  display: block;
+  min-height: 195px;
   .rep-name {
     @include color($white, #37474F);
     @include font($roboto, 19px, 300);
     @include padding(13px, 17px, 13px, 19px);
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
+    // margin-bottom: 15px;
   }
   .view-more {
     float: right;

@@ -2,15 +2,13 @@
 @import '../../scss/base/mixins';
 
 .bill-detail {
-  @include margin(30px, auto, 30px, auto);
+  @include margin(2.5%, auto, 2.5%, auto);
   @include size(65%, 100%);
   background: $white;
   border-radius: 5px;
-  margin-top: 30px;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 30px;
   .bill-name-1 {
     @include color($white, #37474F);
     @include font($roboto, 19px, 400);
@@ -25,7 +23,7 @@
     margin-right: 10px;
   }
   ul {
-    margin-bottom: 25px;
+    margin-bottom: 22px;
   }
   li {
     @include margin(10px, 15px, null, 15px);

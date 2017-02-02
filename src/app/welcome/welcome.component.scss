@@ -70,12 +70,12 @@
   .bill-welcome {
     @include margin(2.5%, null, 2.5%, 2.5%);
     @include padding(null, null, 7px, null);
-    @include size(30%, 100%);
+    @include size(46.5%, 100%);
     background: $white;
     border-radius: 5px;
     float: left;
     .bill-name-2 {
-      @include color($white, #1755AA);
+      @include color($white, #37474F);
       @include font($roboto, 19px, 300);
       @include padding(13px, 32px, 13px, 19px);
       margin-bottom: 13px;
