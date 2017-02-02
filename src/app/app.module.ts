@@ -19,6 +19,7 @@ import { GetBillIdPipe } from './get-bill-id.pipe';
 import { AboutComponent } from './about/about.component';
 import { FilterVotePositionPipe } from './filter-vote-position.pipe';
 import { FilterBillsPipe } from './filter-bills.pipe';
+import { KeywordPipe } from './keyword.pipe';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { FilterBillsPipe } from './filter-bills.pipe';
     GetBillIdPipe,
     AboutComponent,
     FilterVotePositionPipe,
-    FilterBillsPipe
+    FilterBillsPipe,
+    KeywordPipe
   ],
   imports: [
     BrowserModule,
