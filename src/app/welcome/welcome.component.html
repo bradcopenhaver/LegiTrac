@@ -7,10 +7,12 @@
 
 <div class="banner">
   <img class="banner-img" src="img/banner2.jpg">
-  <p class="banner-text-1">Search Congressional Bills</p>
+  <p class="banner-text-1-2">Search Congressional Bills</p>
   <p class="banner-text-2-2">Enter a topic or keyword to learn more about the bills that matter to you.</p>
   <app-bill-search-topic></app-bill-search-topic>
 </div>
+
+<h1 class="trending-heading">Trending Bills</h1>
 
 <div *ngIf="billsArray">
   <div class="bill-welcome" *ngFor="let bill of billsArray[0].bills.slice(0,3)">
