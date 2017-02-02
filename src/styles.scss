@@ -41,6 +41,24 @@
       text-decoration: none;
     }
   }
+  .header-menu {
+    @include font($roboto, 16px, 400);
+    float: right;
+    margin-top: 21px;
+    li {
+      float: left;
+      list-style: none;
+      margin-right: 30px;
+      a {
+        color: $gray-4;
+        transition-duration: .25s;
+      }
+      &:hover a {
+        color: $gray-5;
+        text-decoration: none;
+      }
+    }
+  }
 }
 
 .footer {

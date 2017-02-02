@@ -37,6 +37,20 @@
         color: $gray-3;
       }
     }
+    .banner-text-1-2 {
+      @include color($white, $blue-gray-4);
+      @include font($roboto, 32px, 400);
+      @include padding(25px, 100px, null, 70px);
+      @include position(75px, 0, null, 0)
+      @include size(650px, 250px);
+      margin: auto;
+      opacity: 0.9;
+      position: absolute;
+      text-align: center;
+      .second {
+        @include padding(500px, null, 500px, null)
+      }
+    }
     .banner-text-2-2 {
       @include font($roboto, 22px, 300);
       @include padding(null, 40px, null, 40px);
@@ -68,9 +82,9 @@
   }
 
   .bill-welcome {
-    @include margin(2.5%, null, 2.5%, 2.5%);
+    @include margin(2.5%, null, null, 2.5%);
     @include padding(null, null, 7px, null);
-    @include size(46.5%, 100%);
+    @include size(65%, 100%);
     background: $white;
     border-radius: 5px;
     float: left;
@@ -86,5 +100,11 @@
       @include margin(null, 15px, 10px, 15px);
       color: $blue-gray-4
     }
+  }
+
+  .trending-heading {
+    @include font($roboto, 40px, 500);
+    // text-align: center;
+    color: $blue-4;
   }
 }
