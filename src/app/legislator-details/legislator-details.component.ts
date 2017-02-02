@@ -13,6 +13,8 @@ export class LegislatorDetailsComponent implements OnInit {
   legislator: any;
   voteHistory: any;
   actionShowing: string = "hidden";
+  filterYN: string = "";
+  filterB: string = "";
 
   constructor(private route: ActivatedRoute, private legislatorService: LegislatorService) { }
 
@@ -41,6 +43,17 @@ export class LegislatorDetailsComponent implements OnInit {
     }
   }
 
+  updateYNFilter(choice) {
+    this.filterYN = choice;
+  }
 
+  updateShowBillsFilter(choice) {
+    this.filterB = choice;
+  }
+
+  billDetailLink(billUri: string) {
+    var splitUri = billUri.split("/");
+    return ("bills/" + splitUri[7].slice(0, -5) + "-" + splitUri[5]);
+  }
 
 }
