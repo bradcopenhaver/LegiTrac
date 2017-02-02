@@ -17,6 +17,8 @@ import { PartyNamePipe } from './party-name.pipe';
 import { FormatTimePipe } from './format-time.pipe';
 import { GetBillIdPipe } from './get-bill-id.pipe';
 import { AboutComponent } from './about/about.component';
+import { FilterVotePositionPipe } from './filter-vote-position.pipe';
+import { FilterBillsPipe } from './filter-bills.pipe';
 
 
 @NgModule({
@@ -33,7 +35,9 @@ import { AboutComponent } from './about/about.component';
     PartyNamePipe,
     FormatTimePipe,
     GetBillIdPipe,
-    AboutComponent
+    AboutComponent,
+    FilterVotePositionPipe,
+    FilterBillsPipe
   ],
   imports: [
     BrowserModule,
